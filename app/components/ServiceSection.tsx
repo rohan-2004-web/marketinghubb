@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaSearch, FaBullhorn, FaChartLine, FaUsers } from 'react-icons/fa';
+import { FaSearch, FaBullhorn, FaChartLine, FaUsers, FaDesktop, FaEnvelope } from 'react-icons/fa';
 
 const services = [
   {
@@ -23,6 +23,16 @@ const services = [
     icon: <FaUsers className="text-4xl text-violet-600" />,
     title: 'Content Marketing',
     description: 'Create compelling content that converts visitors into customers.',
+  },
+  {
+    icon: <FaDesktop className="text-4xl text-cyan-500" />,
+    title: 'Web Design',
+    description: 'Beautiful, responsive websites designed to convert visitors into clients.',
+  },
+  {
+    icon: <FaEnvelope className="text-4xl text-pink-500" />,
+    title: 'Email Marketing',
+    description: 'Nurture and retain leads with engaging email campaigns and automation.',
   },
 ];
 
