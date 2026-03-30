@@ -12,8 +12,8 @@ export default function Contact() {
         </div>
       </div>
       <ContactSection />
-      <WhyTrustSection />
       <FAQSection />
+      <WhyTrustSection />
     </div>
   );
 }
