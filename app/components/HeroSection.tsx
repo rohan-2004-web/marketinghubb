@@ -42,14 +42,24 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative h-96 md:h-[420px] rounded-3xl bg-gradient-to-tr from-[#082443] via-[#0b2d55] to-[#122d52] shadow-2xl flex items-center justify-center"
+            className="relative h-96 md:h-[420px] rounded-3xl bg-gradient-to-tr from-[#082443] via-[#0b2d55] to-[#122d52] shadow-2xl overflow-hidden"
           >
-            <div className="h-64 w-64 rounded-2xl bg-[#0c3e74] border border-[#1f7cb7]/50 shadow-[0_0_60px_rgba(57,165,255,0.45)] flex items-center justify-center text-6xl font-black text-[#60e9d7]">
-              M
-            </div>
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0], x: [0, 6, -6, 0], y: [0, -4, 4, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0"
+            >
+              <div className="absolute top-6 left-4 h-20 w-20 rounded-xl bg-[#1b5a91]/90 border border-[#1f7cb7]/60 backdrop-blur-sm" />
+              <div className="absolute bottom-10 right-6 h-16 w-16 rounded-xl bg-[#1e81cd]/90 border border-[#64b4f3]/50 backdrop-blur-sm" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="h-64 w-64 rounded-2xl bg-[#0c3e74] border border-[#1f7cb7]/50 shadow-[0_0_60px_rgba(57,165,255,0.45)] flex items-center justify-center text-6xl font-black text-[#60e9d7]">
+                  M
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
