@@ -1,4 +1,5 @@
 import AboutSection from '../components/AboutSection';
+import FAQSection from '../components/FAQSection';
 
 export default function About() {
   return (
@@ -10,6 +11,7 @@ export default function About() {
         </div>
       </div>
       <AboutSection />
+      <FAQSection />
     </div>
   );
 }

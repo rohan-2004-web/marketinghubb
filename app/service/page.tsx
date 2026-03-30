@@ -1,4 +1,7 @@
 import ServiceSection from '../components/ServiceSection';
+import CoreValuesSection from '../components/CoreValuesSection';
+import WhyTrustSection from '../components/WhyTrustSection';
+import FAQSection from '../components/FAQSection';
 
 export default function Service() {
   return (
@@ -10,6 +13,9 @@ export default function Service() {
         </div>
       </div>
       <ServiceSection />
+      <CoreValuesSection />
+      <WhyTrustSection />
+      <FAQSection />
     </div>
   );
 }

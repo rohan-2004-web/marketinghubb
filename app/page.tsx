@@ -1,5 +1,8 @@
 import HeroSection from './components/HeroSection';
 import ServiceSection from './components/ServiceSection';
+import CoreValuesSection from './components/CoreValuesSection';
+import WhyTrustSection from './components/WhyTrustSection';
+import FAQSection from './components/FAQSection';
 import AboutSection from './components/AboutSection';
 import CourseSection from './components/CourseSection';
 import ContactSection from './components/ContactSection';
@@ -9,6 +12,9 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <ServiceSection />
+      <CoreValuesSection />
+      <WhyTrustSection />
+      <FAQSection />
       <AboutSection />
       <CourseSection />
       <ContactSection />
