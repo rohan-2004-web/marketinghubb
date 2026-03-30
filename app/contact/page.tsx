@@ -12,8 +12,8 @@ export default function Contact() {
           <p className="text-xl md:text-2xl">Get in touch with the best digital marketing agency in Varanasi</p>
         </div>
       </div>
-      <ContactSection />
       <WhyChooseSection />
+      <ContactSection />
       <FAQSection />
       <WhyTrustSection />
     </div>
