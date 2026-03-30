@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp, FaPhone } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -24,10 +24,13 @@ export default function Footer() {
 
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-          <p className="text-sm">Phone: +91 12345 67890</p>
-          <p className="text-sm">Email: info@marketinghubb.in</p>
-          <p className="text-sm">Address: Varanasi, UP, India</p>
-          <div className="flex items-center mt-4 gap-3">
+          <p className="text-sm">Phone: <a href="tel:+917307260253" className="text-[#37d5a8] hover:text-white">7307260253</a></p>
+          <p className="text-sm">WhatsApp: <a href="https://wa.me/917307260253" target="_blank" rel="noopener noreferrer" className="text-[#37d5a8] hover:text-white">7307260253</a></p>
+          <p className="text-sm">Email: <a href="mailto:saurabhcgoubey200@gmail.com" className="text-[#37d5a8] hover:text-white">saurabhcgoubey200@gmail.com</a></p>
+          <p className="text-sm">Address: Mahmoorganj, Varanasi 221010</p>
+          <div className="flex items-center mt-4 gap-3 text-xl">
+            <a href="https://wa.me/917307260253" target="_blank" rel="noopener noreferrer" className="text-[#25d366] hover:text-[#1ca851]"><FaWhatsapp /></a>
+            <a href="tel:+917307260253" className="text-[#37d5a8] hover:text-[#1f55ad]"><FaPhone /></a>
             <a href="#" className="text-[#c7d9f3] hover:text-[#37d5a8]"><FaFacebookF /></a>
             <a href="#" className="text-[#c7d9f3] hover:text-[#37d5a8]"><FaTwitter /></a>
             <a href="#" className="text-[#c7d9f3] hover:text-[#37d5a8]"><FaInstagram /></a>

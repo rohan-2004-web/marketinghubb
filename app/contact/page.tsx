@@ -1,7 +1,6 @@
 import ContactSection from '../components/ContactSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 import WhyTrustSection from '../components/WhyTrustSection';
-import FAQSection from '../components/FAQSection';
 
 export default function Contact() {
   return (
@@ -14,7 +13,6 @@ export default function Contact() {
       </div>
       <WhyChooseSection />
       <ContactSection />
-      <FAQSection />
       <WhyTrustSection />
     </div>
   );
