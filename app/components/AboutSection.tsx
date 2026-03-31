@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function AboutSection() {
@@ -26,9 +27,16 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 h-96 rounded-lg flex items-center justify-center"
+            className="h-96 rounded-lg overflow-hidden shadow-xl"
           >
-            <span className="text-white text-2xl font-bold">MarketingHubb Team</span>
+            <Image
+              src="/image/about.jpg"
+              alt="About MarketingHubb"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover"
+              priority
+            />
           </motion.div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 const trustItems = [
-  '8+ years serving Varanasi and national clients',
+  '2+ years serving Varanasi and national clients',
   '100+ successful digital campaigns',
   '5x average ROI for paid campaigns',
   'Google & Meta certified experts',
