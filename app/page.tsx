@@ -7,7 +7,6 @@ import FAQSection from './components/FAQSection';
 import AboutSection from './components/AboutSection';
 import CourseSection from './components/CourseSection';
 import ContactSection from './components/ContactSection';
-import HomeSEOSection from './components/HomeSEOSection';
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
       <WhyChooseSection />
       <AboutSection />
       <CourseSection />
-      <HomeSEOSection />
       <ContactSection />
     </div>
   );
