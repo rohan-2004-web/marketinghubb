@@ -7,7 +7,7 @@ export default function FloatingIcons() {
   return (
     <div className="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
       <motion.a
-        href="https://wa.me/1234567890" // Replace with actual WhatsApp number
+        href="https://wa.me/917307260253"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors"
@@ -17,7 +17,7 @@ export default function FloatingIcons() {
         <FaWhatsapp size={24} />
       </motion.a>
       <motion.a
-        href="tel:+1234567890" // Replace with actual phone number
+        href="tel:+917307260253"
         className="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
