@@ -1,10 +1,12 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaSearch, FaBullhorn, FaChartLine, FaUsers, FaDesktop, FaEnvelope } from 'react-icons/fa';
 
 const services = [
   {
+    slug: 'seo-optimization',
     icon: <FaSearch className="text-4xl text-blue-600" />,
     title: 'SEO Optimization',
     description: 'Improve your search engine rankings and drive organic traffic.',
@@ -71,9 +73,12 @@ export default function ServiceSection() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
               <p className="text-[#c6dbf6] mb-6">{service.description}</p>
-              <a className="inline-flex items-center gap-2 text-[#2fd8ba] font-semibold" href="#contact">
+              <Link
+                href={`/service/${service.slug}`}
+                className="inline-flex items-center gap-2 text-[#2fd8ba] font-semibold"
+              >
                 Learn More <span className="text-xl">→</span>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
