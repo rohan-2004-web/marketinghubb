@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marketinghubb.vercel.app/sitemap.xml
+
+# Block any private routes if added later
+Disallow: /api/
