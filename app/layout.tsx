@@ -18,6 +18,29 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "MarketingHubb - Best Digital Marketing Agency in Varanasi",
   description: "Professional digital marketing services in Varanasi. Boost your online presence with our expert team.",
+  keywords: [
+    "best digital marketing agency in varanasi",
+    "seo company in varanasi",
+    "digital marketing services varanasi",
+    "local seo varanasi",
+  ],
+  metadataBase: new URL('https://marketinghubb.vercel.app'),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "MarketingHubb - Best Digital Marketing Agency in Varanasi",
+    description: "Professional digital marketing services in Varanasi. Boost your online presence with our expert team.",
+    url: "https://marketinghubb.vercel.app",
+    siteName: "MarketingHubb",
+    type: "website",
+    locale: "en_IN",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
 };
 
 export default function RootLayout({
