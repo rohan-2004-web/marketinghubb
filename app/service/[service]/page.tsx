@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 const services = [
@@ -45,6 +46,39 @@ async function getService(slug: string) {
 
 export async function generateStaticParams() {
   return services.map((service) => ({ service: service.slug }));
+}
+
+export async function generateMetadata({ params }: { params: { service: string } }): Promise<Metadata> {
+  const service = await getService(params.service);
+
+  if (!service) {
+    return {
+      title: 'Service Not Found | MarketingHubb',
+      description: 'The requested service could not be found. Explore other digital marketing services in Varanasi with MarketingHubb.',
+      alternates: { canonical: '/service' },
+    };
+  }
+
+  return {
+    title: `${service.title} | MarketingHubb`,
+    description: `${service.description} Discover the best digital marketing agency in Varanasi for ${service.title}.`,
+    keywords: [
+      'best digital marketing agency in varanasi',
+      `${service.title.toLowerCase()} in varanasi`,
+      'seo service in varanasi',
+    ],
+    alternates: {
+      canonical: `/service/${service.slug}`,
+    },
+    openGraph: {
+      title: `${service.title} | MarketingHubb`,
+      description: `${service.description} Discover the best digital marketing agency in Varanasi for ${service.title}.`,
+      url: `https://www.marketinghubb.in/service/${service.slug}`,
+      siteName: 'MarketingHubb',
+      type: 'website',
+      locale: 'en_IN',
+    },
+  };
 }
 
 export default async function ServiceDetailsPage({ params }: { params: { service: string } }) {

@@ -1,4 +1,26 @@
+import type { Metadata } from 'next';
 import AboutSection from '../components/AboutSection';
+
+export const metadata: Metadata = {
+  title: 'About MarketingHubb | Digital Marketing Agency in Varanasi',
+  description: 'Learn about MarketingHubb, a trusted digital marketing agency in Varanasi delivering SEO, social media, PPC, and web design services.',
+  keywords: [
+    'best digital marketing agency in varanasi',
+    'digital marketing company varanasi',
+    'seo service in varanasi',
+  ],
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About MarketingHubb | Digital Marketing Agency in Varanasi',
+    description: 'Learn about MarketingHubb, a trusted digital marketing agency in Varanasi delivering SEO, social media, PPC, and web design services.',
+    url: 'https://www.marketinghubb.in/about',
+    siteName: 'MarketingHubb',
+    type: 'website',
+    locale: 'en_IN',
+  },
+};
 
 export default function About() {
   return (
