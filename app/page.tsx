@@ -7,6 +7,7 @@ import FAQSection from './components/FAQSection';
 import AboutSection from './components/AboutSection';
 import CourseSection from './components/CourseSection';
 import ContactSection from './components/ContactSection';
+import LocationsSection from './components/LocationsSection';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyTrustSection />
       <FAQSection />
       <WhyChooseSection />
+      <LocationsSection />
       <AboutSection />
       <CourseSection />
     </div>
