@@ -52,8 +52,8 @@ export default function Home() {
       <AboutSection />
       <CourseSection />
       <ContactSection />
-      <MarketingContentSection />
       <FAQSection />
+      <MarketingContentSection />
     </div>
   );
 }
