@@ -41,6 +41,7 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <ServiceSection />
+      <MarketingContentSection />
       <CoreValuesSection />
       <TestimonialsSection />
       <IndustriesSection />
@@ -51,7 +52,6 @@ export default function Home() {
       <CourseSection />
       <ContactSection />
       <FAQSection />
-      <MarketingContentSection />
     </div>
   );
 }
