@@ -1,6 +1,7 @@
 import ServiceSection from '../components/ServiceSection';
 import CoreValuesSection from '../components/CoreValuesSection';
 import WhyTrustSection from '../components/WhyTrustSection';
+import ContactSection from '../components/ContactSection';
 
 export default function Service() {
   return (
@@ -11,6 +12,7 @@ export default function Service() {
           <p className="text-xl md:text-2xl">Comprehensive digital marketing solutions</p>
         </div>
       </div>
+      <ContactSection />
       <ServiceSection />
       <CoreValuesSection />
       <WhyTrustSection />

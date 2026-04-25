@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <HeroSection />
+      <ContactSection />
       <ServiceSection />
       <CoreValuesSection />
       <WhyTrustSection />
@@ -19,7 +20,6 @@ export default function Home() {
       <WhyChooseSection />
       <AboutSection />
       <CourseSection />
-      <ContactSection />
     </div>
   );
 }
