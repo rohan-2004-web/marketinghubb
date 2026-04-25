@@ -4,6 +4,7 @@ import WhyTrustSection from '../components/WhyTrustSection';
 import ContactSection from '../components/ContactSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 import LocationsSection from '../components/LocationsSection';
+import IndustriesSection from '../components/IndustriesSection';
 
 export default function Service() {
   return (
@@ -17,6 +18,7 @@ export default function Service() {
       <ContactSection />
       <ServiceSection />
       <CoreValuesSection />
+      <IndustriesSection />
       <WhyTrustSection />
       <WhyChooseSection />
       <LocationsSection />

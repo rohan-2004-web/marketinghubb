@@ -8,6 +8,7 @@ import AboutSection from './components/AboutSection';
 import CourseSection from './components/CourseSection';
 import ContactSection from './components/ContactSection';
 import LocationsSection from './components/LocationsSection';
+import IndustriesSection from './components/IndustriesSection';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <ServiceSection />
       <CoreValuesSection />
+      <IndustriesSection />
       <WhyTrustSection />
       <WhyChooseSection />
       <LocationsSection />
