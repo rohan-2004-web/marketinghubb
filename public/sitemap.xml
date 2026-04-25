@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://marketinghubb.vercel.app/</loc>
+    <loc>https://www.marketinghubb.in/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.marketinghubb.in/about</loc>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://marketinghubb.vercel.app/service</loc>
+    <loc>https://www.marketinghubb.in/contact</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.marketinghubb.in/service</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/service/seo-optimization</loc>
+    <loc>https://www.marketinghubb.in/service/seo-optimization</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/service/social-media-marketing</loc>
+    <loc>https://www.marketinghubb.in/service/social-media-marketing</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/service/ppc-advertising</loc>
+    <loc>https://www.marketinghubb.in/service/ppc-advertising</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/service/content-marketing</loc>
+    <loc>https://www.marketinghubb.in/service/content-marketing</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/service/web-design</loc>
+    <loc>https://www.marketinghubb.in/service/web-design</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://marketinghubb.vercel.app/service/email-marketing</loc>
+    <loc>https://www.marketinghubb.in/service/email-marketing</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
 </urlset>
