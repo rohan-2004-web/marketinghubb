@@ -15,13 +15,13 @@ export default function Service() {
           <p className="text-xl md:text-2xl">Comprehensive digital marketing solutions</p>
         </div>
       </div>
-      <ContactSection />
       <ServiceSection />
       <CoreValuesSection />
       <IndustriesSection />
       <WhyTrustSection />
       <WhyChooseSection />
       <LocationsSection />
+      <ContactSection />
     </div>
   );
 }
