@@ -12,6 +12,7 @@ import ContactSection from './components/ContactSection';
 import LocationsSection from './components/LocationsSection';
 import IndustriesSection from './components/IndustriesSection';
 import MarketingContentSection from './components/MarketingContentSection';
+import FounderSection from './components/FounderSection';
 
 export const metadata: Metadata = {
   title: 'MarketingHubb | Best Digital Marketing Agency in Varanasi',
@@ -41,6 +42,7 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <ServiceSection />
+      <FounderSection />
       <CoreValuesSection />
       <TestimonialsSection />
       <IndustriesSection />
