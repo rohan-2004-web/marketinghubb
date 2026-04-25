@@ -5,6 +5,7 @@ import ContactSection from '../components/ContactSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 import LocationsSection from '../components/LocationsSection';
 import IndustriesSection from '../components/IndustriesSection';
+import ServiceSEOContent from '../components/ServiceSEOContent';
 
 export default function Service() {
   return (
@@ -22,6 +23,7 @@ export default function Service() {
       <WhyChooseSection />
       <LocationsSection />
       <ContactSection />
+      <ServiceSEOContent />
     </div>
   );
 }
