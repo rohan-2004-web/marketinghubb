@@ -9,6 +9,7 @@ import CourseSection from './components/CourseSection';
 import ContactSection from './components/ContactSection';
 import LocationsSection from './components/LocationsSection';
 import IndustriesSection from './components/IndustriesSection';
+import MarketingContentSection from './components/MarketingContentSection';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <CourseSection />
       <ContactSection />
       <FAQSection />
+      <MarketingContentSection />
     </div>
   );
 }
