@@ -8,7 +8,7 @@ export default function FounderSection() {
           <div className="relative overflow-hidden rounded-[2rem] border-4 border-emerald-500/20 bg-slate-900 shadow-[0_30px_80px_-40px_rgba(32,40,60,0.6)]">
             <div className="aspect-[4/5] w-full">
               <Image
-                src="/image/about.jpg"
+                src="/image/founder image.jpeg"
                 alt="Saurabh Chaubey"
                 className="object-cover"
                 fill
