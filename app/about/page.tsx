@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AboutSection from '../components/AboutSection';
+import MarketingContentSection from '../components/MarketingContentSection';
 
 export const metadata: Metadata = {
   title: 'About MarketingHubb | Digital Marketing Agency in Varanasi',
@@ -32,6 +33,7 @@ export default function About() {
         </div>
       </div>
       <AboutSection />
+      <MarketingContentSection />
     </div>
   );
 }
