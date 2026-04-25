@@ -11,6 +11,7 @@ import ContactSection from './components/ContactSection';
 import HomeSEOSection from './components/HomeSEOSection';
 import LocationsSection from './components/LocationsSection';
 import IndustriesSection from './components/IndustriesSection';
+import TestimonialsSection from './components/TestimonialsSection';
 import MarketingContentSection from './components/MarketingContentSection';
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function Home() {
       <HomeSEOSection />
       <ServiceSection />
       <CoreValuesSection />
+      <TestimonialsSection />
       <IndustriesSection />
       <WhyTrustSection />
       <WhyChooseSection />
