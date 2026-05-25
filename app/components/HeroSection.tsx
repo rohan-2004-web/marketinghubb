@@ -28,32 +28,32 @@ export default function HeroSection() {
               Best Digital Marketing Agency in Varanasi — We help brands grow through data-driven strategies, creative campaigns, and measurable results.
             </p>
             <div className="flex flex-wrap gap-4">
-                <MotionA
+              <MotionA
                 href="#contact"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#35d6b0] to-[#24b38c] text-[#031c3a] font-bold rounded-full shadow-lg shadow-[#35d6b0]/30 hover:shadow-[#35d6b0]/50 transition-all duration-300"
               >
                 Get Started
-              </motion.a>
-                <MotionA
+              </MotionA>
+              <MotionA
                 href="#services"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#35d6b0]/50 rounded-full text-white hover:bg-[#35d6b0]/10 hover:border-[#35d6b0] transition-all duration-300 backdrop-blur-sm"
               >
                 Our Services
-              </motion.a>
+              </MotionA>
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="relative h-96 md:h-[420px] rounded-3xl bg-gradient-to-tr from-[#082443] via-[#0b2d55] to-[#122d52] shadow-2xl overflow-hidden border border-white/10"
           >
-            <motion.div
+            <MotionDiv
               animate={{ rotate: [0, 5, -5, 0], x: [0, 6, -6, 0], y: [0, -4, 4, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute inset-0"
@@ -65,8 +65,8 @@ export default function HeroSection() {
                   M
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </MotionDiv>
+          </MotionDiv>
         </div>
       </div>
     </section>
