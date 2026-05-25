@@ -8,6 +8,7 @@ type Submission = {
   id: string;
   name: string;
   email: string;
+  service?: string;
   message: string;
   createdAt: string;
 };
@@ -114,6 +115,9 @@ export default function AdminPage() {
                       <div>
                         <p className="text-lg font-semibold text-slate-900">{submission.name}</p>
                         <p className="text-sm text-slate-500">{submission.email}</p>
+                        {submission.service ? (
+                          <p className="text-sm text-slate-500">Service: {submission.service}</p>
+                        ) : null}
                       </div>
                       <p className="text-sm text-slate-500">{new Date(submission.createdAt).toLocaleString()}</p>
                     </div>

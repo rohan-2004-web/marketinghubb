@@ -7,6 +7,7 @@ export interface Submission {
   id: string;
   name: string;
   email: string;
+  service?: string;
   message: string;
   createdAt: string;
 }

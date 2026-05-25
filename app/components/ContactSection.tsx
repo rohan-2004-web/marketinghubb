@@ -11,15 +11,26 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    service: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatusMessage('');
+    if (!formData.service) {
+      setStatusMessage('Please select the service you are interested in.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -32,11 +43,13 @@ export default function ContactSection() {
         throw new Error(errorData?.error || 'Submission failed');
       }
 
-      alert('Thank you for your message! We will get back to you soon.');
-      setFormData({ name: '', email: '', message: '' });
+      setStatusMessage('Thank you for your message! We will get back to you soon.');
+      setFormData({ name: '', email: '', service: '', message: '' });
     } catch (error) {
       console.error('Contact submit error:', error);
-      alert('Sorry, we could not save your message. Please try again later.');
+      setStatusMessage('Sorry, we could not save your message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -121,6 +134,27 @@ export default function ContactSection() {
               />
             </div>
             <div>
+              <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                Interested Service
+              </label>
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="">Select a service</option>
+                <option value="SEO Optimization">SEO Optimization</option>
+                <option value="Social Media Marketing">Social Media Marketing</option>
+                <option value="PPC Advertising">PPC Advertising</option>
+                <option value="Website Development">Website Development</option>
+                <option value="Local Business Marketing">Local Business Marketing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                 Message
               </label>
@@ -135,13 +169,17 @@ export default function ContactSection() {
                 placeholder="Tell us about your project..."
               />
             </div>
+            {statusMessage ? (
+              <p className="text-sm text-center text-slate-700 mb-2">{statusMessage}</p>
+            ) : null}
             <MotionButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              disabled={isSubmitting}
+              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:cursor-not-allowed disabled:bg-blue-400"
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </MotionButton>
           </MotionForm>
         </div>
