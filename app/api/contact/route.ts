@@ -3,16 +3,17 @@ import { readSubmissions, writeSubmissions, Submission } from '../../../lib/subm
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const { name, email, service, message } = body || {};
+  const { name, email, phone, service, message } = body || {};
 
-  if (!name || !email || !service || !message) {
-    return NextResponse.json({ error: 'Name, email, service, and message are required.' }, { status: 400 });
+  if (!name || !email || !phone || !service || !message) {
+    return NextResponse.json({ error: 'Name, email, phone, service, and message are required.' }, { status: 400 });
   }
 
   const newSubmission: Submission = {
     id: crypto.randomUUID(),
     name: String(name).trim(),
     email: String(email).trim(),
+    phone: String(phone).trim(),
     service: String(service).trim(),
     message: String(message).trim(),
     createdAt: new Date().toISOString(),

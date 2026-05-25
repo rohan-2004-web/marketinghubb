@@ -11,6 +11,7 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     service: '',
     message: '',
   });
@@ -24,6 +25,10 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatusMessage('');
+    if (!formData.phone) {
+      setStatusMessage('Please enter your phone number.');
+      return;
+    }
     if (!formData.service) {
       setStatusMessage('Please select the service you are interested in.');
       return;
@@ -44,7 +49,7 @@ export default function ContactSection() {
       }
 
       setStatusMessage('Thank you for your message! We will get back to you soon.');
-      setFormData({ name: '', email: '', service: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch (error) {
       console.error('Contact submit error:', error);
       setStatusMessage('Sorry, we could not save your message. Please try again later.');
@@ -131,6 +136,21 @@ export default function ContactSection() {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="your@email.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Enter your phone number"
               />
             </div>
             <div>

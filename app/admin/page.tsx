@@ -8,6 +8,7 @@ type Submission = {
   id: string;
   name: string;
   email: string;
+  phone: string;
   service?: string;
   message: string;
   createdAt: string;
@@ -115,6 +116,7 @@ export default function AdminPage() {
                       <div>
                         <p className="text-lg font-semibold text-slate-900">{submission.name}</p>
                         <p className="text-sm text-slate-500">{submission.email}</p>
+                        <p className="text-sm text-slate-500">{submission.phone}</p>
                         {submission.service ? (
                           <p className="text-sm text-slate-500">Service: {submission.service}</p>
                         ) : null}
