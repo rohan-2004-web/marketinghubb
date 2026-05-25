@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'best digital marketing agency in varanasi',
   ],
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://www.marketinghubb.in/contact',
   },
   openGraph: {
     title: 'Contact MarketingHubb | Digital Marketing Agency in Varanasi',

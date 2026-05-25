@@ -1,7 +1,13 @@
-﻿'use client';
+﻿"use client";
 
 import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp, FaPhone } from 'react-icons/fa';
+import dynamic from 'next/dynamic';
+
+const FaWhatsapp = dynamic(() => import('react-icons/fa').then((m) => m.FaWhatsapp), { ssr: false });
+const FaPhone = dynamic(() => import('react-icons/fa').then((m) => m.FaPhone), { ssr: false });
+const FaFacebookF = dynamic(() => import('react-icons/fa').then((m) => m.FaFacebookF), { ssr: false });
+const FaInstagram = dynamic(() => import('react-icons/fa').then((m) => m.FaInstagram), { ssr: false });
+const FaLinkedinIn = dynamic(() => import('react-icons/fa').then((m) => m.FaLinkedinIn), { ssr: false });
 
 export default function Footer() {
   return (

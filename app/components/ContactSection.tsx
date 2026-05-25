@@ -1,7 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
+
+const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
+const MotionForm = dynamic(() => import('framer-motion').then((m) => m.motion.form), { ssr: false });
+const MotionButton = dynamic(() => import('framer-motion').then((m) => m.motion.button), { ssr: false });
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -25,7 +29,7 @@ export default function ContactSection() {
   return (
     <section className="py-20 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -37,10 +41,10 @@ export default function ContactSection() {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to boost your digital presence? Get in touch with us today.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -63,9 +67,9 @@ export default function ContactSection() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.form
+          <MotionForm
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -117,15 +121,15 @@ export default function ContactSection() {
                 placeholder="Tell us about your project..."
               />
             </div>
-            <motion.button
+            <MotionButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
               className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Send Message
-            </motion.button>
-          </motion.form>
+            </MotionButton>
+          </MotionForm>
         </div>
       </div>
     </section>

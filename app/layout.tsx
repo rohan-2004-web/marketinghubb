@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL('https://www.marketinghubb.in'),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.marketinghubb.in/",
   },
   openGraph: {
     title: "MarketingHubb - Best Digital Marketing Agency in Varanasi",

@@ -1,7 +1,9 @@
-﻿'use client';
+﻿"use client";
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
 
 export default function AboutSection() {
   return (
@@ -12,7 +14,7 @@ export default function AboutSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -40,9 +42,9 @@ export default function AboutSection() {
                 <p className="text-sm text-[#5f7d9c]">Varanasi market and small business focused</p>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -54,7 +56,6 @@ export default function AboutSection() {
               width={900}
               height={700}
               className="h-full w-full object-cover"
-              priority
             />
             <div className="absolute left-6 top-6 rounded-3xl bg-white/90 px-5 py-4 shadow-lg shadow-slate-900/10 backdrop-blur-xl">
               <p className="text-sm uppercase tracking-[0.24em] text-[#35d6b0] mb-2">Why choose us</p>
@@ -62,7 +63,7 @@ export default function AboutSection() {
             </div>
             <div className="absolute -bottom-10 right-6 h-24 w-24 rounded-full bg-[#35d6b0]/20 blur-2xl" />
             <div className="absolute top-24 left-8 h-16 w-16 rounded-full bg-[#0c62a9]/15 blur-2xl" />
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>

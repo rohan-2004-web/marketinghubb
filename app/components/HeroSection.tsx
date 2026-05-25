@@ -1,6 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
+const MotionA = dynamic(() => import('framer-motion').then((m) => m.motion.a), { ssr: false });
 
 export default function HeroSection() {
   return (
@@ -9,7 +12,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#031c3a]/80 via-transparent to-transparent" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <motion.div
+            <MotionDiv
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -25,7 +28,7 @@ export default function HeroSection() {
               Best Digital Marketing Agency in Varanasi — We help brands grow through data-driven strategies, creative campaigns, and measurable results.
             </p>
             <div className="flex flex-wrap gap-4">
-              <motion.a
+                <MotionA
                 href="#contact"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -33,7 +36,7 @@ export default function HeroSection() {
               >
                 Get Started
               </motion.a>
-              <motion.a
+                <MotionA
                 href="#services"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}

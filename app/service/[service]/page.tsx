@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 const services = [
   {
@@ -55,7 +56,7 @@ export async function generateMetadata({ params }: { params: { service: string }
     return {
       title: 'Service Not Found | MarketingHubb',
       description: 'The requested service could not be found. Explore other digital marketing services in Varanasi with MarketingHubb.',
-      alternates: { canonical: '/service' },
+      alternates: { canonical: 'https://www.marketinghubb.in/service' },
     };
   }
 
@@ -68,7 +69,7 @@ export async function generateMetadata({ params }: { params: { service: string }
       'seo service in varanasi',
     ],
     alternates: {
-      canonical: `/service/${service.slug}`,
+      canonical: `https://www.marketinghubb.in/service/${service.slug}`,
     },
     openGraph: {
       title: `${service.title} | MarketingHubb`,
@@ -85,15 +86,7 @@ export default async function ServiceDetailsPage({ params }: { params: { service
   const service = await getService(params.service);
 
   if (!service) {
-    return (
-      <div className="min-h-screen pt-20 flex items-center justify-center bg-gray-100">
-        <div className="max-w-xl text-center p-8 bg-white rounded-xl shadow-lg">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Service Not Found</h1>
-          <p className="text-gray-600 mb-6">Sorry, we cannot find the service you are looking for.</p>
-          <Link href="/service" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Back to Services</Link>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   return (
