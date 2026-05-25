@@ -77,8 +77,11 @@ const services = [
   },
 ];
 
+export const dynamicParams = false;
+
 async function getService(slug: string) {
-  return services.find(service => service.slug === slug);
+  const normalizedSlug = String(slug).toLowerCase();
+  return services.find((service) => service.slug.toLowerCase() === normalizedSlug);
 }
 
 export async function generateStaticParams() {
