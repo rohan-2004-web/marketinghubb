@@ -143,9 +143,9 @@ export default function ContactSection() {
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
-                <option value="">Select a service</option>
+                <option value="" className="text-slate-500">Select a service</option>
                 <option value="SEO Optimization">SEO Optimization</option>
                 <option value="Social Media Marketing">Social Media Marketing</option>
                 <option value="PPC Advertising">PPC Advertising</option>
