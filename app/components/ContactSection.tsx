@@ -18,12 +18,26 @@ export default function ContactSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData?.error || 'Submission failed');
+      }
+
+      alert('Thank you for your message! We will get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Contact submit error:', error);
+      alert('Sorry, we could not save your message. Please try again later.');
+    }
   };
 
   return (
