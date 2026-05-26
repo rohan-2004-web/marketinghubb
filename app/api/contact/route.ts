@@ -2,17 +2,23 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readSubmissions, writeSubmissions, Submission } from '../../../lib/submissions';
 
 export async function POST(request: NextRequest) {
+  console.log('🔵 POST /api/contact called');
   try {
     const body = await request.json();
     const { name, email, phone, service, message } = body || {};
 
-    console.log('📨 Received submission:', { name, email, phone, service, message });
+    console.log('📨 Received data:', { name, email, phone, service, message: message?.substring(0, 20) + '...' });
 
+    // Validation
     if (!name || !email || !phone || !service || !message) {
-      console.warn('⚠️ Validation failed - Missing required fields');
-      return NextResponse.json({ error: 'Name, email, phone, service, and message are required.' }, { status: 400 });
+      console.warn('⚠️ Validation failed');
+      return NextResponse.json(
+        { error: 'Name, email, phone, service, and message are required.' }, 
+        { status: 400 }
+      );
     }
 
+    // Create submission
     const newSubmission: Submission = {
       id: crypto.randomUUID(),
       name: String(name).trim(),
@@ -23,21 +29,31 @@ export async function POST(request: NextRequest) {
       createdAt: new Date().toISOString(),
     };
 
-    console.log('✅ Creating submission:', newSubmission.id);
+    console.log('✏️ Created submission object:', newSubmission.id);
     
+    // Read existing submissions
     const submissions = await readSubmissions();
-    console.log('📋 Current submissions count:', submissions.length);
+    console.log('📋 Read', submissions.length, 'existing submissions');
     
+    // Add new submission
     submissions.unshift(newSubmission);
-    await writeSubmissions(submissions);
+    console.log('➕ Added new submission, total now:', submissions.length);
     
-    console.log('💾 Submission saved successfully. Total submissions:', submissions.length);
-    return NextResponse.json({ success: true, submission: newSubmission }, { status: 201 });
+    // Write submissions
+    await writeSubmissions(submissions);
+    console.log('✅ Successfully saved submission');
+    
+    return NextResponse.json({ 
+      success: true, 
+      submission: newSubmission,
+      totalCount: submissions.length 
+    }, { status: 201 });
   } catch (error) {
-    console.error('❌ Error saving submission:', error);
+    console.error('❌ Error in POST /api/contact:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return NextResponse.json({ 
       error: 'Unable to save submission.',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: errorMessage
     }, { status: 500 });
   }
 }
