@@ -25,7 +25,7 @@ export default function FounderAboutSection() {
             <div className="relative w-full max-w-sm mx-auto">
               <div className="rounded-3xl border-4 border-slate-800 overflow-hidden shadow-2xl">
                 <img
-                  src="/image/founder.jpg"
+                  src="/image/founder image.jpeg"
                   alt="Saurabh Chaubey - Founder"
                   className="w-full h-auto object-cover"
                 />
