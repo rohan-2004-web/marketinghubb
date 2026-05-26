@@ -1,59 +1,102 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { readSubmissions, writeSubmissions, Submission } from '../../../lib/submissions';
+import { promises as fs } from 'fs';
+import path from 'path';
+
+interface Submission {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  service?: string;
+  message: string;
+  createdAt: string;
+}
+
+const dataDir = path.join(process.cwd(), 'data');
+const submissionsFile = path.join(dataDir, 'submissions.json');
+
+async function ensureDir() {
+  try {
+    await fs.mkdir(dataDir, { recursive: true });
+  } catch (error) {
+    console.error('Error creating directory:', error);
+  }
+}
+
+async function readSubmissions(): Promise<Submission[]> {
+  try {
+    await ensureDir();
+    const content = await fs.readFile(submissionsFile, 'utf-8');
+    return JSON.parse(content);
+  } catch (error) {
+    console.log('Creating new submissions file');
+    return [];
+  }
+}
+
+async function writeSubmissions(submissions: Submission[]) {
+  try {
+    await ensureDir();
+    await fs.writeFile(
+      submissionsFile,
+      JSON.stringify(submissions, null, 2),
+      'utf-8'
+    );
+    console.log('✅ Saved', submissions.length, 'submissions');
+  } catch (error) {
+    console.error('Write error:', error);
+    throw error;
+  }
+}
 
 export async function POST(request: NextRequest) {
-  console.log('🔵 POST /api/contact called');
   try {
+    console.log('📨 API called');
     const body = await request.json();
-    const { name, email, phone, service, message } = body || {};
+    const { name, email, phone, service, message } = body;
 
-    console.log('📨 Received data:', { name, email, phone, service, message: message?.substring(0, 20) + '...' });
+    console.log('Data received:', { name, email, phone, service });
 
-    // Validation
     if (!name || !email || !phone || !service || !message) {
-      console.warn('⚠️ Validation failed');
       return NextResponse.json(
-        { error: 'Name, email, phone, service, and message are required.' }, 
+        { error: 'All fields are required.' },
         { status: 400 }
       );
     }
 
-    // Create submission
-    const newSubmission: Submission = {
+    const submission: Submission = {
       id: crypto.randomUUID(),
-      name: String(name).trim(),
-      email: String(email).trim(),
-      phone: String(phone).trim(),
-      service: String(service).trim(),
-      message: String(message).trim(),
+      name: name.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      service: service.trim(),
+      message: message.trim(),
       createdAt: new Date().toISOString(),
     };
 
-    console.log('✏️ Created submission object:', newSubmission.id);
-    
-    // Read existing submissions
+    console.log('📝 New submission:', submission.id);
+
     const submissions = await readSubmissions();
-    console.log('📋 Read', submissions.length, 'existing submissions');
-    
-    // Add new submission
-    submissions.unshift(newSubmission);
-    console.log('➕ Added new submission, total now:', submissions.length);
-    
-    // Write submissions
+    console.log('📋 Current count:', submissions.length);
+
+    submissions.unshift(submission);
+
     await writeSubmissions(submissions);
-    console.log('✅ Successfully saved submission');
-    
-    return NextResponse.json({ 
-      success: true, 
-      submission: newSubmission,
-      totalCount: submissions.length 
-    }, { status: 201 });
+
+    console.log('✅ Saved successfully');
+
+    return NextResponse.json(
+      { success: true, submission },
+      { status: 201 }
+    );
   } catch (error) {
-    console.error('❌ Error in POST /api/contact:', error);
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    return NextResponse.json({ 
-      error: 'Unable to save submission.',
-      details: errorMessage
-    }, { status: 500 });
+    console.error('❌ API Error:', error);
+    return NextResponse.json(
+      {
+        error: 'Unable to save submission',
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    );
   }
 }
