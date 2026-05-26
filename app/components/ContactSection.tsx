@@ -37,21 +37,25 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
+      console.log('📤 Submitting form data:', formData);
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
+      const responseData = await response.json();
+      console.log('📥 Response:', responseData);
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData?.error || 'Submission failed');
+        throw new Error(responseData?.error || 'Submission failed');
       }
 
+      console.log('✅ Submission successful!');
       setStatusMessage('Thank you for your message! We will get back to you soon.');
       setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch (error) {
-      console.error('Contact submit error:', error);
+      console.error('❌ Contact submit error:', error);
       setStatusMessage('Sorry, we could not save your message. Please try again later.');
     } finally {
       setIsSubmitting(false);
