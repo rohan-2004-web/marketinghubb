@@ -62,19 +62,18 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        'service_hiqb728',
-        'template_icw1cii',
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-          to_email: 'saurabhcgoubey200@gmail.com',
-        },
-        'psSOH3HTpdmSvFGd-'
-      );
+     await emailjs.send(
+  'service_hiqb728',
+  'template_icw1cii',
+  {
+    from_name: formData.name,
+    reply_to: formData.email,
+    phone: formData.phone,
+    service: formData.service,
+    message: formData.message,
+  },
+  'psSOH3HTpdmSvFGd-'
+);
 
       setStatusMessage('Message Sent Successfully ✅');
 
@@ -135,6 +134,7 @@ export default function ContactSection() {
                 className="text-[#3473d2] hover:text-[#1f55ad]"
               >
                 7307260253
+
               </a>
             </p>
 
