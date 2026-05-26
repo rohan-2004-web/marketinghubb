@@ -2,10 +2,22 @@
 
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
-const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
-const MotionForm = dynamic(() => import('framer-motion').then((m) => m.motion.form), { ssr: false });
-const MotionButton = dynamic(() => import('framer-motion').then((m) => m.motion.button), { ssr: false });
+const MotionDiv = dynamic(
+  () => import('framer-motion').then((m) => m.motion.div),
+  { ssr: false }
+);
+
+const MotionForm = dynamic(
+  () => import('framer-motion').then((m) => m.motion.form),
+  { ssr: false }
+);
+
+const MotionButton = dynamic(
+  () => import('framer-motion').then((m) => m.motion.button),
+  { ssr: false }
+);
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,48 +27,67 @@ export default function ContactSection() {
     service: '',
     message: '',
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setStatusMessage('');
+
     if (!formData.phone) {
       setStatusMessage('Please enter your phone number.');
       return;
     }
+
     if (!formData.service) {
-      setStatusMessage('Please select the service you are interested in.');
+      setStatusMessage(
+        'Please select the service you are interested in.'
+      );
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      console.log('📤 Submitting form data:', formData);
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      await emailjs.send(
+        'service_hiqb728',
+        'template_icw1cii',
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          to_email: 'saurabhcgoubey200@gmail.com',
+        },
+        'psSOH3HTpdmSvFGd-'
+      );
+
+      setStatusMessage('Message Sent Successfully ✅');
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
       });
-
-      const responseData = await response.json();
-      console.log('📥 Response:', responseData);
-
-      if (!response.ok) {
-        throw new Error(responseData?.error || 'Submission failed');
-      }
-
-      console.log('✅ Submission successful!');
-      setStatusMessage('Thank you for your message! We will get back to you soon.');
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch (error) {
-      console.error('❌ Contact submit error:', error);
-      setStatusMessage('Sorry, we could not save your message. Please try again later.');
+      console.error('Email Error:', error);
+      setStatusMessage('Failed to send message ❌');
     } finally {
       setIsSubmitting(false);
     }
@@ -65,6 +96,7 @@ export default function ContactSection() {
   return (
     <section className="py-20 bg-white" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <MotionDiv
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,33 +106,55 @@ export default function ContactSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Contact Us
           </h2>
+
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to boost your digital presence? Get in touch with us today.
           </p>
         </MotionDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
           <MotionDiv
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="rounded-2xl bg-gradient-to-br from-[#f0f6ff] to-[#e4f0ff] p-6 border border-[#c8dcf9] shadow-lg"
           >
-            <h3 className="text-2xl md:text-3xl font-bold text-[#0a3c72] mb-4">Visit Us in Mahmoorganj</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#0a3c72] mb-4">
+              Visit Us in Mahmoorganj
+            </h3>
+
             <p className="text-[#2d4f7f] mb-6">
               <strong>Address:</strong> Mahmoorganj, Varanasi 221010
             </p>
-            <p className="text-[#2d4f7f] mb-2"><strong>Phone:</strong> <a href="tel:+917307260253" className="text-[#3473d2] hover:text-[#1f55ad]">7307260253</a></p>
-            <p className="text-[#2d4f7f] mb-6"><strong>Email:</strong> <a href="mailto:saurabhcgoubey200@gmail.com" className="text-[#3473d2] hover:text-[#1f55ad]">saurabhcgoubey200@gmail.com</a></p>
+
+            <p className="text-[#2d4f7f] mb-2">
+              <strong>Phone:</strong>{' '}
+              <a
+                href="tel:+917307260253"
+                className="text-[#3473d2] hover:text-[#1f55ad]"
+              >
+                7307260253
+              </a>
+            </p>
+
+            <p className="text-[#2d4f7f] mb-6">
+              <strong>Email:</strong>{' '}
+              <a
+                href="mailto:saurabhcgoubey200@gmail.com"
+                className="text-[#3473d2] hover:text-[#1f55ad]"
+              >
+                saurabhcgoubey200@gmail.com
+              </a>
+            </p>
+
             <div className="w-full h-64 rounded-xl overflow-hidden border border-[#bfd6fb] shadow-inner">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.78990688837!2d82.994147!3d25.304663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398c93a2cd05b97d%3A0x438f84d8228e28cc!2sMahmoorganj%2C%20Varanasi%2C%20Uttar%20Pradesh%20221010!5e0!3m2!1sen!2sin!4v1723290957411!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen={false}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </MotionDiv>
@@ -112,10 +166,15 @@ export default function ContactSection() {
             onSubmit={handleSubmit}
             className="space-y-6 rounded-2xl bg-white border border-[#e7eefb] p-6 shadow-lg"
           >
+
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Name
               </label>
+
               <input
                 type="text"
                 id="name"
@@ -127,10 +186,15 @@ export default function ContactSection() {
                 placeholder="Your Name"
               />
             </div>
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Email
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -142,10 +206,15 @@ export default function ContactSection() {
                 placeholder="your@email.com"
               />
             </div>
+
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Phone Number
               </label>
+
               <input
                 type="tel"
                 id="phone"
@@ -157,19 +226,24 @@ export default function ContactSection() {
                 placeholder="Enter your phone number"
               />
             </div>
+
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="service"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Interested Service
               </label>
+
               <select
                 id="service"
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
-                <option value="" className="text-slate-500">Select a service</option>
+                <option value="">Select a service</option>
                 <option value="SEO Optimization">SEO Optimization</option>
                 <option value="Social Media Marketing">Social Media Marketing</option>
                 <option value="PPC Advertising">PPC Advertising</option>
@@ -178,10 +252,15 @@ export default function ContactSection() {
                 <option value="Other">Other</option>
               </select>
             </div>
+
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Message
               </label>
+
               <textarea
                 id="message"
                 name="message"
@@ -193,9 +272,13 @@ export default function ContactSection() {
                 placeholder="Tell us about your project..."
               />
             </div>
-            {statusMessage ? (
-              <p className="text-sm text-center text-slate-700 mb-2">{statusMessage}</p>
-            ) : null}
+
+            {statusMessage && (
+              <p className="text-sm text-center text-slate-700 mb-2">
+                {statusMessage}
+              </p>
+            )}
+
             <MotionButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -205,6 +288,7 @@ export default function ContactSection() {
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </MotionButton>
+
           </MotionForm>
         </div>
       </div>
