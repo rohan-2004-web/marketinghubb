@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import os from 'os';
 import path from 'path';
 
-const storageRoot = process.env.SUBMISSIONS_STORAGE_PATH || path.join(os.tmpdir(), 'marketinghubb');
+const storageRoot = process.env.SUBMISSIONS_STORAGE_PATH || path.join(process.cwd(), 'data');
 const submissionsFile = path.join(storageRoot, 'submissions.json');
 const seedFile = path.join(process.cwd(), 'data', 'submissions.json');
 

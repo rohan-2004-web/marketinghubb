@@ -29,7 +29,7 @@ export default function ServiceSEOContent() {
               SEO stands for Search Engine Optimization. It means making your website more visible when people search for services in Varanasi. A good <strong>SEO service in Varanasi</strong> improves your website so it ranks higher on search engines like Google. When your site appears on page one, more people can find you easily.
             </p>
             <p className="leading-8">
-              In simple words, SEO helps your business appear when someone types a question or a service like "digital marketing in Varanasi" or "best SEO company in Varanasi". It is all about connecting local customers with your brand.
+              In simple words, SEO helps your business appear when someone types a question or a service like &quot;digital marketing in Varanasi&quot; or &quot;best SEO company in Varanasi&quot;. It is all about connecting local customers with your brand.
             </p>
           </article>
 
@@ -82,7 +82,7 @@ export default function ServiceSEOContent() {
                 <strong>Website Audit:</strong> We check your website performance, content, and technical setup.
               </li>
               <li>
-                <strong>Keyword Strategy:</strong> We choose the right search terms, including local keywords like "SEO service in Varanasi".
+                <strong>Keyword Strategy:</strong> We choose the right search terms, including local keywords like &quot;SEO service in Varanasi&quot;.
               </li>
               <li>
                 <strong>On-Page SEO:</strong> We optimize your pages, titles, and content for search engines and users.
@@ -143,7 +143,7 @@ export default function ServiceSEOContent() {
           <article className="space-y-6">
             <h2 className="text-3xl font-bold text-white">Call to Action</h2>
             <p className="leading-8">
-              Ready to work with the best SEO company in Varanasi? Let’s make your website more visible, trusted, and profitable. Our team is ready to help you with a caring, local approach.
+              Ready to work with the best SEO company in Varanasi? Let&apos;s make your website more visible, trusted, and profitable. Our team is ready to help you with a caring, local approach.
             </p>
             <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:justify-center">
               <a

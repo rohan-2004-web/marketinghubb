@@ -43,7 +43,7 @@ export default function AdminPage() {
         }
         const data = await response.json();
         setSubmissions(data);
-      } catch (fetchError) {
+      } catch {
         setError('Could not fetch submissions.');
       } finally {
         setLoading(false);
@@ -51,6 +51,10 @@ export default function AdminPage() {
     }
 
     loadSubmissions();
+
+    // Auto-refresh submissions every 5 seconds
+    const interval = setInterval(loadSubmissions, 5000);
+    return () => clearInterval(interval);
   }, [loggedIn]);
 
   return (
