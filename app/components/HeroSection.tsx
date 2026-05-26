@@ -22,10 +22,10 @@ export default function HeroSection() {
               #1 DIGITAL MARKETING AGENCY IN VARANASI
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r from-white via-[#e0f2ff] to-[#35d6b0] bg-clip-text text-transparent">
-              GROW YOUR <span className="text-[#35d6b0]">BUSINESS</span> WITH <br /> DIGITAL MARKETING
+              Grow your business with digital marketing
             </h1>
             <p className="max-w-xl text-lg text-[#c8d8ee] leading-relaxed">
-              Best Digital Marketing Agency in Varanasi — We help brands grow through data-driven strategies, creative campaigns, and measurable results.
+              Best digital marketing agency in Varanasi helping local brands win online.
             </p>
             <div className="flex flex-wrap gap-4">
               <MotionA
