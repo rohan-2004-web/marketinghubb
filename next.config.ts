@@ -3,26 +3,16 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // Redirect non-www to www only for the root domain
       {
-        source: '/:path*',
+        source: '/:path((?!api).*)',
         has: [
           {
             type: 'host',
             value: 'marketinghubb.in',
           },
         ],
-        destination: 'https://www.marketinghubb.in/:path*',
-        permanent: true,
-      },
-      {
-        source: '/',
-        has: [
-          {
-            type: 'host',
-            value: 'marketinghubb.in',
-          },
-        ],
-        destination: 'https://www.marketinghubb.in/',
+        destination: 'https://www.marketinghubb.in/:path',
         permanent: true,
       },
     ];
