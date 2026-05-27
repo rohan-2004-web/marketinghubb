@@ -62,21 +62,35 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-     await emailjs.send(
-  'service_hiqb728',
-  'template_icw1cii',
-  {
-    from_name: formData.name,
-    reply_to: formData.email,
-    phone: formData.phone,
-    service: formData.service,
-    message: formData.message,
-  },
-  'psSOH3HTpdmSvFGd-'
-);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      setStatusMessage('Message Sent Successfully ✅');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        const errorMessage =
+          errorData?.error || 'Unable to save submission to the server.';
+        throw new Error(errorMessage);
+      }
 
+      await emailjs.send(
+        'service_hiqb728',
+        'template_icw1cii',
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        'psSOH3HTpdmSvFGd-'
+      );
+
+      setStatusMessage('Message sent successfully and saved ✅');
       setFormData({
         name: '',
         email: '',
@@ -85,8 +99,12 @@ export default function ContactSection() {
         message: '',
       });
     } catch (error) {
-      console.error('Email Error:', error);
-      setStatusMessage('Failed to send message ❌');
+      console.error('Contact Form Error:', error);
+      setStatusMessage(
+        error instanceof Error
+          ? `${error.message} ❌`
+          : 'Failed to send message ❌'
+      );
     } finally {
       setIsSubmitting(false);
     }

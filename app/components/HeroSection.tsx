@@ -16,13 +16,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            
             className="space-y-6"
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#35d6b0]/20 to-[#0c62a9]/20 border border-[#35d6b0]/30 px-5 py-2 rounded-full text-sm font-medium text-[#35d6b0] backdrop-blur-sm">
-              #1 DIGITAL MARKETING AGENCY IN VARANASI
+              #1 BEST DIGITAL MARKETING AGENCY IN VARANASI
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight bg-gradient-to-r from-white via-[#e0f2ff] to-[#35d6b0] bg-clip-text text-transparent">
-              Grow your business with digital marketing
+              Grow Your Business with Digital Marketing
             </h1>
             <p className="max-w-xl text-lg text-[#c8d8ee] leading-relaxed">
               Best digital marketing agency in Varanasi helping local brands win online.
