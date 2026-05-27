@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const MotionDiv = dynamic(
@@ -30,6 +30,10 @@ export default function ContactSection() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
+
+  useEffect(() => {
+    emailjs.init('psSOH3HTpdmSvFGd-');
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -61,6 +65,10 @@ export default function ContactSection() {
 
     setIsSubmitting(true);
 
+    let saved = false;
+    let emailSent = false;
+    let emailErrorMessage = '';
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -77,20 +85,29 @@ export default function ContactSection() {
         throw new Error(errorMessage);
       }
 
-      await emailjs.send(
-        'service_hiqb728',
-        'template_icw1cii',
-        {
-          from_name: formData.name,
-          reply_to: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-        },
-        'psSOH3HTpdmSvFGd-'
-      );
+      saved = true;
 
-      setStatusMessage('Message sent successfully and saved ✅');
+      try {
+        await emailjs.send(
+          'service_hiqb728',
+          'template_icw1cii',
+          {
+            from_name: formData.name,
+            reply_to: formData.email,
+            phone: formData.phone,
+            service: formData.service,
+            message: formData.message,
+          }
+        );
+        emailSent = true;
+      } catch (emailError) {
+        console.error('EmailJS Error:', emailError);
+        emailErrorMessage =
+          emailError instanceof Error
+            ? emailError.message
+            : 'Email delivery failed.';
+      }
+
       setFormData({
         name: '',
         email: '',
@@ -98,6 +115,14 @@ export default function ContactSection() {
         service: '',
         message: '',
       });
+
+      if (emailSent) {
+        setStatusMessage('Message sent successfully and saved ✅');
+      } else {
+        setStatusMessage(
+          `Saved successfully, but email delivery failed. ${emailErrorMessage}`
+        );
+      }
     } catch (error) {
       console.error('Contact Form Error:', error);
       setStatusMessage(

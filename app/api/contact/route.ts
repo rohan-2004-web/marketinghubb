@@ -6,8 +6,27 @@ export const runtime = 'nodejs';
 export async function POST(request: NextRequest) {
   try {
     console.log('📨 Contact API called');
-    const body = await request.json();
-    const { name, email, phone, service, message } = body as Partial<Submission>;
+    const rawBody = await request.text();
+    console.log('📦 Raw request body:', rawBody);
+
+    let body: Partial<Submission>;
+    try {
+      body = JSON.parse(rawBody || '{}');
+    } catch (parseError) {
+      console.error('❌ Failed to parse request body:', parseError);
+      return NextResponse.json(
+        {
+          error: 'Invalid JSON payload.',
+          details:
+            parseError instanceof Error
+              ? parseError.message
+              : 'Unable to parse request body.',
+        },
+        { status: 400 }
+      );
+    }
+
+    const { name, email, phone, service, message } = body;
 
     console.log('Data received:', { name, email, phone, service });
 
