@@ -9,7 +9,12 @@ export async function POST(request: NextRequest) {
     const rawBody = await request.text();
     console.log('📦 Raw request body:', rawBody);
 
-    let body: Partial<Submission>;
+    type ContactPayload = Partial<Submission> & {
+      company?: string;
+      agree?: boolean | string;
+    };
+
+    let body: ContactPayload;
     try {
       body = JSON.parse(rawBody || '{}');
     } catch (parseError) {
