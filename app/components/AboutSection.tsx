@@ -1,9 +1,4 @@
-﻿"use client";
-
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
-
-const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
 
 export default function AboutSection() {
   return (
@@ -14,12 +9,7 @@ export default function AboutSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <MotionDiv
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="rounded-[32px] border border-white/80 bg-white/90 p-10 shadow-[0_25px_80px_rgba(12,98,169,0.12)] backdrop-blur-xl"
-          >
+          <div className="rounded-[32px] border border-white/80 bg-white/90 p-10 shadow-[0_25px_80px_rgba(12,98,169,0.12)] backdrop-blur-xl">
             <span className="inline-flex rounded-full bg-[#35d6b0]/10 px-4 py-2 text-sm font-semibold text-[#0c62a9] mb-6">
               Trusted digital marketing partner in Varanasi
             </span>
@@ -42,14 +32,9 @@ export default function AboutSection() {
                 <p className="text-sm text-[#5f7d9c]">Varanasi market and small business focused</p>
               </div>
             </div>
-          </MotionDiv>
+          </div>
 
-          <MotionDiv
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[520px] rounded-[32px] overflow-hidden shadow-[0_35px_80px_rgba(12,98,169,0.18)]"
-          >
+          <div className="relative h-[520px] rounded-[32px] overflow-hidden shadow-[0_35px_80px_rgba(12,98,169,0.18)]">
             <Image
               src="/image/about.jpg"
               alt="About MarketingHubb"
@@ -63,7 +48,7 @@ export default function AboutSection() {
             </div>
             <div className="absolute -bottom-10 right-6 h-24 w-24 rounded-full bg-[#35d6b0]/20 blur-2xl" />
             <div className="absolute top-24 left-8 h-16 w-16 rounded-full bg-[#0c62a9]/15 blur-2xl" />
-          </MotionDiv>
+          </div>
         </div>
       </div>
     </section>

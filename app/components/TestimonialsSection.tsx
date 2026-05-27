@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 const testimonials = [
   {
     name: 'Kishan Chaubey',
@@ -36,28 +32,18 @@ export default function TestimonialsSection() {
       <div className="absolute right-10 -bottom-16 h-56 w-56 rounded-full bg-[#0c62a9]/20 blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="text-xs font-semibold tracking-widest text-[#35d6b0] mb-2">CLIENT SUCCESS</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">What Our Clients Say</h2>
           <p className="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
             Real reviews from business owners who trusted MarketingHubb for SEO, web design, and digital growth.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {testimonials.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: index * 0.08 }}
               className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-[0_35px_80px_rgba(0,0,0,0.2)] backdrop-blur-xl transition duration-500 hover:border-[#35d6b0]/40 hover:bg-white/10"
             >
               <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-[#35d6b0]/10 blur-2xl" />
@@ -76,7 +62,7 @@ export default function TestimonialsSection() {
                 <p className="text-slate-100 text-base leading-8">“{item.comment}”</p>
                 <p className="mt-6 text-sm font-semibold text-white">{item.name}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

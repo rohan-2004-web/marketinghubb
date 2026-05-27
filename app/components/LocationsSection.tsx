@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 const upCities = [
   'Varanasi',
   'Lucknow',
@@ -31,19 +27,13 @@ const upCities = [
   'Bhadohi',
   'Jaunpur',
 ];
-
 const otherStates = ['Delhi NCR', 'Maharashtra', 'Rajasthan', 'Gujarat', 'Karnataka', 'Tamil Nadu', 'Kerala'];
 
 export default function LocationsSection() {
   return (
     <section className="py-20 bg-[#06172f] text-white" id="locations">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <p className="text-sm font-semibold tracking-[0.4em] text-[#2fe1b3] mb-3">OUR LOCATIONS</p>
           <h2 className="text-5xl font-extrabold text-white">
             WE SERVE <span className="text-[#2fe1b3]">28 CITIES</span> ACROSS INDIA
@@ -51,14 +41,9 @@ export default function LocationsSection() {
           <p className="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
             From metro cities to tier-2 towns — MarketingHubb delivers world-class digital marketing everywhere in India.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid gap-8"
-        >
+        <div className="grid gap-8">
           <div className="rounded-[32px] border border-white/10 bg-white/5 p-8">
             <div className="mb-8 flex items-center gap-3 border-b border-white/10 pb-4">
               <div className="h-12 w-12 rounded-2xl bg-[#2fe1b3]/10 flex items-center justify-center text-[#2fe1b3] text-xl">🏛️</div>
@@ -92,7 +77,7 @@ export default function LocationsSection() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

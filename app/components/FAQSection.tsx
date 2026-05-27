@@ -1,9 +1,3 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-
-const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
-
 const faqItems = [
   { q: 'What services does MarketingHubb provide?', a: 'We offer SEO, social media management, PPC, content marketing, web design, email campaigns and analytics-driven strategies.' },
   { q: 'How do I get started with your agency?', a: 'Reach out via contact form or call/WhatsApp icon, then we schedule a free strategy consultation.' },
@@ -23,26 +17,20 @@ export default function FAQSection() {
   return (
     <section className="py-20 bg-[#e9f5ff]" id="faq">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center mb-12">
+        <div className="text-center mb-12">
           <p className="text-xs font-semibold tracking-widest text-[#0b69a3] mb-2">FAQ</p>
           <h2 className="text-4xl md:text-5xl font-bold text-[#0f3b68]">Frequently Asked Questions</h2>
           <p className="mt-4 text-lg text-[#496a86] max-w-3xl mx-auto">
             Everything you need to know before partnering with MarketingHubb.
           </p>
-        </MotionDiv>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {faqItems.map((item, index) => (
-            <MotionDiv
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.06 }}
-              className="rounded-xl bg-white p-6 border border-[#dbe8f5] shadow-sm"
-            >
+            <div key={index} className="rounded-xl bg-white p-6 border border-[#dbe8f5] shadow-sm">
               <h3 className="text-lg font-bold text-[#0f3b68]">{item.q}</h3>
               <p className="mt-2 text-[#537a9a]">{item.a}</p>
-            </MotionDiv>
+            </div>
           ))}
         </div>
       </div>

@@ -1,10 +1,3 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-
-const MotionDiv = dynamic(() => import('framer-motion').then((m) => m.motion.div), { ssr: false });
-const MotionA = dynamic(() => import('framer-motion').then((m) => m.motion.a), { ssr: false });
-
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#031c3a] via-[#0a1f3c] to-[#0e2b54] text-white py-24">
@@ -12,13 +5,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#031c3a]/80 via-transparent to-transparent" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <MotionDiv
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            
-            className="space-y-6"
-          >
+          <div className="space-y-6">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#35d6b0]/20 to-[#0c62a9]/20 border border-[#35d6b0]/30 px-5 py-2 rounded-full text-sm font-medium text-[#35d6b0] backdrop-blur-sm">
               #1 BEST DIGITAL MARKETING AGENCY IN VARANASI
             </div>
@@ -29,36 +16,23 @@ export default function HeroSection() {
               Best digital marketing agency in Varanasi helping local brands win online.
             </p>
             <div className="flex flex-wrap gap-4">
-              <MotionA
+              <a
                 href="#contact"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#35d6b0] to-[#24b38c] text-[#031c3a] font-bold rounded-full shadow-lg shadow-[#35d6b0]/30 hover:shadow-[#35d6b0]/50 transition-all duration-300"
               >
                 Get Started
-              </MotionA>
-              <MotionA
+              </a>
+              <a
                 href="#services"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#35d6b0]/50 rounded-full text-white hover:bg-[#35d6b0]/10 hover:border-[#35d6b0] transition-all duration-300 backdrop-blur-sm"
               >
                 Our Services
-              </MotionA>
+              </a>
             </div>
-          </MotionDiv>
+          </div>
 
-          <MotionDiv
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative h-96 md:h-[420px] rounded-3xl bg-gradient-to-tr from-[#082443] via-[#0b2d55] to-[#122d52] shadow-2xl overflow-hidden border border-white/10"
-          >
-            <MotionDiv
-              animate={{ rotate: [0, 5, -5, 0], x: [0, 6, -6, 0], y: [0, -4, 4, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute inset-0"
-            >
+          <div className="relative h-96 md:h-[420px] rounded-3xl bg-gradient-to-tr from-[#082443] via-[#0b2d55] to-[#122d52] shadow-2xl overflow-hidden border border-white/10">
+            <div className="absolute inset-0">
               <div className="absolute top-6 left-4 h-20 w-20 rounded-xl bg-gradient-to-br from-[#35d6b0]/30 to-[#0c62a9]/30 border border-[#35d6b0]/40 backdrop-blur-sm" />
               <div className="absolute bottom-10 right-6 h-16 w-16 rounded-xl bg-gradient-to-br from-[#0c62a9]/30 to-[#35d6b0]/30 border border-[#0c62a9]/40 backdrop-blur-sm" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -66,8 +40,8 @@ export default function HeroSection() {
                   M
                 </div>
               </div>
-            </MotionDiv>
-          </MotionDiv>
+            </div>
+          </div>
         </div>
       </div>
     </section>

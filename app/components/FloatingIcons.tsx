@@ -1,29 +1,24 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { FaWhatsapp, FaPhone } from 'react-icons/fa';
-
 export default function FloatingIcons() {
   return (
     <div className="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
-      <motion.a
+      <a
         href="https://wa.me/917307260253"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform duration-200 hover:-translate-y-1"
       >
-        <FaWhatsapp size={24} />
-      </motion.a>
-      <motion.a
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+          <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.373 0 0 5.373 0 12c0 2.105.547 4.116 1.585 5.9L0 24l6.35-1.633A11.921 11.921 0 0012 24c6.627 0 12-5.373 12-12 0-3.187-1.244-6.191-3.48-8.52zM12 22.068c-1.886 0-3.721-.502-5.29-1.432l-.377-.217-3.773.971.994-3.66-.245-.375A9.918 9.918 0 012.988 12c0-5.523 4.477-10 10-10 2.663 0 5.174 1.036 7.062 2.924A9.914 9.914 0 0122 12c0 5.523-4.477 10-10 10zm5.176-7.437c-.211-.105-1.245-.615-1.438-.684-.193-.07-.333-.105-.472.105-.139.211-.538.684-.659.823-.121.14-.242.158-.453.053-.211-.105-.89-.327-1.693-.958-.626-.558-1.048-1.248-1.172-1.458-.121-.211-.013-.325.094-.43.097-.096.211-.242.316-.363.105-.12.14-.211.21-.352.07-.14.035-.263-.018-.368-.053-.105-.472-1.138-.647-1.56-.171-.41-.345-.354-.472-.359-.121-.006-.263-.007-.404-.007-.14 0-.368.053-.56.263-.193.211-.736.72-.736 1.758 0 1.038.754 2.042.858 2.182.105.14 1.48 2.258 3.588 3.167.5.216.889.345 1.193.442.501.16.958.137 1.32.083.403-.06 1.245-.51 1.421-1.001.175-.49.175-.91.122-.999-.053-.092-.193-.14-.404-.246z" />
+        </svg>
+      </a>
+      <a
         href="tel:+917307260253"
-        className="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition-colors"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        className="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-600 transition-transform duration-200 hover:-translate-y-1"
       >
-        <FaPhone size={24} />
-      </motion.a>
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+          <path d="M6.62 10.79a15.052 15.052 0 006.59 6.59l2.2-2.2a1.001 1.001 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1C9.16 21.5 2.5 14.84 2.5 6.5a1 1 0 011-1H7a1 1 0 011 1c0 1.35.26 2.67.76 3.88.14.31.075.67-.21.92l-2.2 2.2z" />
+        </svg>
+      </a>
     </div>
   );
 }
