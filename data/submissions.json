@@ -1,5 +1,14 @@
 [
   {
+    "id": "65254b48-2e17-46ee-9a97-a31e11d30eba",
+    "name": "Automated Test",
+    "email": "test@marketinghubb.local",
+    "phone": "9999999999",
+    "service": "TestCo",
+    "message": "Automated submission test",
+    "createdAt": "2026-05-27T10:39:01.394Z"
+  },
+  {
     "id": "2902354e-acfc-46f1-a7cd-f198f7379c58",
     "name": "Saurabh Chaubey",
     "email": "saurabhcgoubey200@gmail.com",

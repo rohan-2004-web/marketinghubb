@@ -26,13 +26,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, email, phone, service, message } = body;
+    const { name, email, phone, service, company, message, agree } = body;
 
-    console.log('Data received:', { name, email, phone, service });
+    console.log('Data received:', { name, email, phone, service, company, agree });
 
-    if (!name || !email || !phone || !service || !message) {
+    // Require core contact fields; `service` is optional now and may be provided as `company` instead
+    if (!name || !email || !phone || !message) {
       return NextResponse.json(
-        { error: 'All fields are required.' },
+        { error: 'Missing required fields: name, email, phone and message are required.' },
         { status: 400 }
       );
     }
@@ -42,7 +43,7 @@ export async function POST(request: NextRequest) {
       name: name.trim(),
       email: email.trim(),
       phone: phone.trim(),
-      service: service.trim(),
+      service: (service || company || '').toString().trim(),
       message: message.trim(),
       createdAt: new Date().toISOString(),
     };
