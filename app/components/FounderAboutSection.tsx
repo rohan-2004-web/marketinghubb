@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function FounderAboutSection() {
   return (
     <section className="py-20 bg-white">
@@ -6,10 +8,14 @@ export default function FounderAboutSection() {
           <div className="relative">
             <div className="relative w-full max-w-sm mx-auto">
               <div className="rounded-3xl border-4 border-slate-800 overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/image/founder image.jpeg"
                   alt="Saurabh Chaubey - Founder"
+                  width={840}
+                  height={1120}
+                  sizes="(max-width: 768px) 100vw, 420px"
                   className="w-full h-auto object-cover"
+                  priority={false}
                 />
               </div>
               <div className="absolute bottom-6 right-6 bg-emerald-500 text-white px-4 py-2 rounded-full font-bold shadow-lg">

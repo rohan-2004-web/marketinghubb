@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import ServiceSection from '../components/ServiceSection';
 import CoreValuesSection from '../components/CoreValuesSection';
 import WhyTrustSection from '../components/WhyTrustSection';
-import ContactSection from '../components/ContactSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 import LocationsSection from '../components/LocationsSection';
 import IndustriesSection from '../components/IndustriesSection';
@@ -47,7 +46,55 @@ export default function Service() {
       <WhyTrustSection />
       <WhyChooseSection />
       <LocationsSection />
-      <ContactSection />
+
+      <section className="bg-slate-50 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[32px] overflow-hidden border border-slate-200 bg-white shadow-lg">
+            <div className="grid gap-10 md:grid-cols-[1fr_320px] p-10 sm:p-14">
+              <div>
+                <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Visit Our Office in Mahmoorganj</h2>
+                <p className="text-gray-600 text-lg max-w-3xl mb-6">
+                  MarketingHubb is based in Mahmoorganj, Varanasi 221010. View our location and reach out by phone, email or WhatsApp.
+                </p>
+                <div className="space-y-4 text-slate-700 text-base">
+                  <div>
+                    <span className="font-semibold">Address:</span> Mahmoorganj, Varanasi, Uttar Pradesh 221010
+                  </div>
+                  <div>
+                    <span className="font-semibold">Phone:</span>{' '}
+                    <a href="tel:+917307260253" className="text-blue-600 hover:underline">+91 73072 60253</a>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Email:</span>{' '}
+                    <a href="mailto:contact@marketinghubb.in" className="text-blue-600 hover:underline">contact@marketinghubb.in</a>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Office Hours:</span> Mon - Sat, 10:00 AM – 7:00 PM
+                  </div>
+                </div>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a href="https://wa.me/917307260253" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold transition duration-300">
+                    Chat on WhatsApp
+                  </a>
+                  <a href="https://maps.google.com/maps?q=Mahmoorganj%20Varanasi%20221010" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center border border-slate-300 bg-white text-slate-900 px-6 py-3 rounded-full font-semibold transition duration-300 hover:bg-slate-50">
+                    Open in Google Maps
+                  </a>
+                </div>
+              </div>
+              <div className="h-[520px] sm:h-[620px]">
+                <iframe
+                  className="w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=Mahmoorganj%20Varanasi%20221010&z=15&output=embed"
+                  title="Mahmoorganj Varanasi map"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ServiceSEOContent />
     </div>
   );

@@ -35,6 +35,25 @@ export const metadata: Metadata = {
     siteName: "MarketingHubb",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://www.marketinghubb.in/image/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MarketingHubb logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MarketingHubb - Best Digital Marketing Agency in Varanasi",
+    description: "Professional digital marketing services in Varanasi. Boost your online presence with our expert team.",
+    images: ["https://www.marketinghubb.in/image/logo.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   robots: {
     index: true,
