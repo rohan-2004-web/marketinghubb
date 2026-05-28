@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 
 const services = [
   {
-    slug: 'seo-optimization',
+    slug: 'seo',
+    aliases: ['seo-optimization'],
     title: 'SEO Optimization',
     description: 'Improve your search engine rankings and drive organic traffic with our proven SEO strategies.',
     details: 'Keyword research, on-page optimization, technical SEO, backlink building, and local SEO for lasting growth.',
@@ -16,7 +17,8 @@ const services = [
     ],
   },
   {
-    slug: 'social-media-marketing',
+    slug: 'smm',
+    aliases: ['social-media-marketing'],
     title: 'Social Media Marketing',
     description: 'Engage your audience across all social media platforms and grow your brand awareness.',
     details: 'Content planning, community management, paid ads, and performance tracking on Facebook, Instagram, LinkedIn, and more.',
@@ -28,7 +30,8 @@ const services = [
     ],
   },
   {
-    slug: 'ppc-advertising',
+    slug: 'ppc',
+    aliases: ['ppc-advertising'],
     title: 'PPC Advertising',
     description: 'Targeted pay-per-click campaigns for maximum ROI and qualified leads.',
     details: 'Campaign setup, keyword bidding, A/B landing page testing, and bid optimization on Google Ads and social networks.',
@@ -40,20 +43,9 @@ const services = [
     ],
   },
   {
-    slug: 'content-marketing',
-    title: 'Content Marketing',
-    description: 'Create compelling content that converts visitors into customers.',
-    details: 'Blog strategy, copywriting, video scripts, lead magnets, and email sequences aligned with your funnel.',
-    relatedTopics: [
-      'Blog and article writing',
-      'Video script creation',
-      'Lead magnet development',
-      'Email nurture sequences',
-    ],
-  },
-  {
-    slug: 'web-design',
-    title: 'Web Design',
+    slug: 'website',
+    aliases: ['web-design'],
+    title: 'Website Design',
     description: 'Beautiful, responsive websites designed to convert visitors into clients.',
     details: 'UI/UX design, performance optimization, mobile-first experiences, and CMS implementation.',
     relatedTopics: [
@@ -64,7 +56,21 @@ const services = [
     ],
   },
   {
-    slug: 'email-marketing',
+    slug: 'graphic',
+    aliases: ['graphic-design'],
+    title: 'Graphic Design',
+    description: 'Creative graphic design services for logos, branding, social media, and marketing collateral.',
+    details: 'Brand identity design, logo creation, social media graphics, brochures, and print materials that boost credibility.',
+    relatedTopics: [
+      'Brand identity and logo design',
+      'Social media graphics and ads',
+      'Brochure and flyer design',
+      'Visual brand consistency',
+    ],
+  },
+  {
+    slug: 'email',
+    aliases: ['email-marketing'],
     title: 'Email Marketing',
     description: 'Nurture and retain leads with engaging email campaigns and automation.',
     details: 'Newsletter design, drip campaigns, segmentation, and analytics to increase open rates and conversions.',
@@ -81,7 +87,12 @@ export const dynamicParams = false;
 
 async function getService(slug: string) {
   const normalizedSlug = String(slug).toLowerCase();
-  return services.find((service) => service.slug.toLowerCase() === normalizedSlug);
+  return services.find((service) => {
+    return (
+      service.slug.toLowerCase() === normalizedSlug ||
+      service.aliases?.some((alias) => alias.toLowerCase() === normalizedSlug)
+    );
+  });
 }
 
 export async function generateStaticParams() {

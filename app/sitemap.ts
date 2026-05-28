@@ -4,14 +4,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.marketinghubb.in';
 
   const services = [
-    'seo-optimization',
-    'social-media-marketing',
-    'ppc-advertising',
-    'content-marketing',
-    'web-design',
-    'email-marketing',
-    'brand-strategy',
-    'graphic-design',
+    'seo',
+    'smm',
+    'ppc',
+    'website',
+    'graphic',
+    'email',
   ];
 
   const staticPages: MetadataRoute.Sitemap = [

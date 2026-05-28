@@ -4,37 +4,37 @@ import Link from 'next/link';
 
 const services = [
   {
-    slug: 'seo-optimization',
+    slug: 'seo',
     icon: '🔎',
     title: 'SEO Optimization',
     description: 'Improve your search engine rankings and drive organic traffic with focused SEO strategies.',
   },
   {
-    slug: 'social-media-marketing',
+    slug: 'smm',
     icon: '📢',
     title: 'Social Media Marketing',
     description: 'Build brand awareness and engagement through powerful social media campaigns.',
   },
   {
-    slug: 'ppc-advertising',
+    slug: 'ppc',
     icon: '📈',
     title: 'PPC Advertising',
     description: 'Capture instant leads with targeted pay-per-click campaigns on Google and social platforms.',
   },
   {
-    slug: 'content-marketing',
-    icon: '🧑‍🤝‍🧑',
-    title: 'Content Marketing',
-    description: 'Convert visitors into customers with compelling content and storytelling that sells.',
-  },
-  {
-    slug: 'web-design',
+    slug: 'website',
     icon: '🖥️',
-    title: 'Web Design',
+    title: 'Website Design',
     description: 'Craft responsive, high-converting websites that reflect your brand and build trust.',
   },
   {
-    slug: 'email-marketing',
+    slug: 'graphic',
+    icon: '🎨',
+    title: 'Graphic Design',
+    description: 'Design powerful brand visuals, logos, and creative assets that make your business memorable.',
+  },
+  {
+    slug: 'email',
     icon: '✉️',
     title: 'Email Marketing',
     description: 'Retain customers and boost sales with smart email campaigns and automation.',
