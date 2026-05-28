@@ -6,12 +6,13 @@ export default function FounderSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[420px_minmax(0,1fr)] items-center rounded-[2rem] bg-white p-8 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.32)] ring-1 ring-slate-200/80">
           <div className="relative overflow-hidden rounded-[2rem] border-4 border-emerald-500/20 bg-slate-900 shadow-[0_30px_80px_-40px_rgba(32,40,60,0.6)]">
-            <div className="aspect-[4/5] w-full">
+            <div className="relative aspect-[4/5] w-full">
               <Image
                 src="/image/founder image.jpeg"
                 alt="Saurabh Chaubey"
                 className="object-cover"
                 fill
+                sizes="(max-width: 768px) 100vw, 420px"
               />
             </div>
             <div className="absolute bottom-5 right-5 rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-lg shadow-emerald-500/20">

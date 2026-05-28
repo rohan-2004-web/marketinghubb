@@ -40,6 +40,9 @@ export default function AboutSection() {
               alt="About MarketingHubb"
               width={900}
               height={700}
+              priority
+              loading="eager"
+              sizes="(max-width: 1024px) 100vw, 540px"
               className="h-full w-full object-cover"
             />
             <div className="absolute left-6 top-6 rounded-3xl bg-white/90 px-5 py-4 shadow-lg shadow-slate-900/10 backdrop-blur-xl">
