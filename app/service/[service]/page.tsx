@@ -96,7 +96,10 @@ async function getService(slug: string) {
 }
 
 export async function generateStaticParams() {
-  return services.map((service) => ({ service: service.slug }));
+  return services.flatMap((service) => [
+    { service: service.slug },
+    ...(service.aliases?.map((alias) => ({ service: alias })) ?? []),
+  ]);
 }
 
 export async function generateMetadata({ params }: { params: { service: string } }): Promise<Metadata> {
