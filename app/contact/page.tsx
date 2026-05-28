@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import ContactSection from '../components/ContactSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 import WhyTrustSection from '../components/WhyTrustSection';
 
@@ -33,8 +32,28 @@ export default function Contact() {
           <p className="text-xl md:text-2xl">Get in touch with the best digital marketing agency in Varanasi</p>
         </div>
       </div>
+      <section className="bg-slate-50 py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-[32px] overflow-hidden border border-slate-200 bg-white shadow-lg">
+            <div className="p-10 sm:p-14">
+              <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Visit Our Office in Mahmoorganj</h2>
+              <p className="text-gray-600 text-lg max-w-3xl">
+                Find MarketingHubb's location in Mahmoorganj, Varanasi 221010. Use the map below to reach us easily from any part of the city.
+              </p>
+            </div>
+            <div className="h-[520px] sm:h-[620px]">
+              <iframe
+                className="w-full h-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Mahmoorganj%20Varanasi%20221010&z=15&output=embed"
+                title="Mahmoorganj Varanasi map"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       <WhyChooseSection />
-      <ContactSection />
       <WhyTrustSection />
     </div>
   );
