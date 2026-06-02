@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HeroSection from './components/HeroSection';
+import ServiceSection from './components/ServiceSection';
 import CoreValuesSection from './components/CoreValuesSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import WhyChooseSection from './components/WhyChooseSection';
@@ -39,6 +40,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 pt-16">
       <HeroSection />
+      <ServiceSection />
       <FounderSection />
       <CoreValuesSection />
       <TestimonialsSection />
