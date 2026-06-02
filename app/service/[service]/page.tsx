@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 const services = [
   {
     slug: 'seo',
-    aliases: ['seo-optimization'],
+    aliases: ['seo-optimization', 'seoisko'],
     title: 'SEO Optimization',
     description: 'Improve your search engine rankings and drive organic traffic with our proven SEO strategies.',
     details: 'Keyword research, on-page optimization, technical SEO, backlink building, and local SEO for lasting growth.',
