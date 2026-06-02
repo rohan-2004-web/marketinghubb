@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-const ADMIN_PASSWORD = '@saurabh2004';
+const ADMIN_EMAIL = 'saurabhcgoubey200@gmail.com';
+const ADMIN_PASSWORD = 'saurabh@2004';
 
 type Submission = {
   id: string;
@@ -16,6 +17,7 @@ type Submission = {
 
 export default function AdminPage() {
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [error, setError] = useState('');
@@ -23,7 +25,7 @@ export default function AdminPage() {
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (password === ADMIN_PASSWORD) {
+    if (email.toLowerCase() === ADMIN_EMAIL.toLowerCase() && password === ADMIN_PASSWORD) {
       setLoggedIn(true);
       setError('');
     } else {
@@ -67,6 +69,21 @@ export default function AdminPage() {
 
         {!loggedIn ? (
           <form onSubmit={handleLogin} className="space-y-4 max-w-md">
+            <div>
+              <label htmlFor="admin-email" className="block text-sm font-medium text-slate-700 mb-2">
+                Admin Email
+              </label>
+              <input
+                id="admin-email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                placeholder="saurabhcgoubey200@gmail.com"
+                autoComplete="username"
+                required
+              />
+            </div>
             <div>
               <label htmlFor="admin-password" className="block text-sm font-medium text-slate-700 mb-2">
                 Admin Password

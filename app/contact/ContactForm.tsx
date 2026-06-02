@@ -1,0 +1,148 @@
+'use client';
+
+import { useState } from 'react';
+
+const serviceOptions = [
+  { value: 'SEO Optimization', label: 'SEO Optimization' },
+  { value: 'Social Media Marketing', label: 'Social Media Marketing' },
+  { value: 'PPC Advertising', label: 'PPC Advertising' },
+  { value: 'Website Design', label: 'Website Design' },
+  { value: 'Graphic Design', label: 'Graphic Design' },
+  { value: 'Email Marketing', label: 'Email Marketing' },
+  { value: 'Other', label: 'Other' },
+];
+
+export default function ContactForm() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('SEO Optimization');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus('loading');
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, phone, service, message }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        setStatus('error');
+        setError(data.error || 'Unable to submit form.');
+        return;
+      }
+
+      setStatus('success');
+      setName('');
+      setEmail('');
+      setPhone('');
+      setService('SEO Optimization');
+      setMessage('');
+    } catch (submitError) {
+      setStatus('error');
+      setError('Unable to submit the form. Please try again later.');
+    }
+  }
+
+  return (
+    <section className="bg-white py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Send us a message</h2>
+          <p className="text-slate-600 mb-8">Fill out the form and our team will connect with you about your chosen service.</p>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid gap-6 lg:grid-cols-2">
+              <label className="block">
+                <span className="text-sm font-medium text-slate-700">Name</span>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                  placeholder="Your name"
+                  required
+                  className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium text-slate-700">Email</span>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="you@example.com"
+                  required
+                  className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                />
+              </label>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              <label className="block">
+                <span className="text-sm font-medium text-slate-700">Contact number</span>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(event) => setPhone(event.target.value)}
+                  placeholder="+91 12345 67890"
+                  required
+                  className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium text-slate-700">Service</span>
+                <select
+                  value={service}
+                  onChange={(event) => setService(event.target.value)}
+                  className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                >
+                  {serviceOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            <label className="block">
+              <span className="text-sm font-medium text-slate-700">Message</span>
+              <textarea
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                placeholder="Tell us about your project or questions"
+                rows={6}
+                required
+                className="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+              />
+            </label>
+
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-8 py-3 text-white font-semibold shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {status === 'loading' ? 'Sending...' : 'Submit Request'}
+              </button>
+              {status === 'success' && <p className="text-sm text-emerald-600">Your message has been sent successfully.</p>}
+              {status === 'error' && <p className="text-sm text-red-600">{error}</p>}
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
