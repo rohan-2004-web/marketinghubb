@@ -297,6 +297,442 @@ function SEOServicePageContent() {
   );
 }
 
+function SocialMediaPageContent() {
+  return (
+    <div className="space-y-16 mt-10">
+      <section className="rounded-[32px] border border-slate-200 bg-white p-12 shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-cyan-600 mb-4">Social Media Marketing</p>
+            <h2 className="text-5xl font-extrabold tracking-tight mb-6">Grow your brand with social media campaigns</h2>
+            <p className="text-lg leading-8 text-slate-700">
+              MarketingHubb builds social strategies that engage audiences, tell your brand story, and drive meaningful actions across Instagram, Facebook, LinkedIn, and more.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-slate-50 p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-600 mb-4">What we deliver</p>
+            <ul className="space-y-4 text-slate-700">
+              <li>Content calendars that keep your brand active and relevant</li>
+              <li>Targeted ad campaigns for leads and conversions</li>
+              <li>Community growth and engagement management</li>
+              <li>Data-driven performance optimization</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-8 lg:grid-cols-3">
+        {[
+          {
+            title: 'Audience Growth',
+            text: 'We help you find and grow the right audience with hashtag strategy, community building, and paid reach.',
+          },
+          {
+            title: 'Creative Content',
+            text: 'Engaging posts, reels, and ads that build brand recall and drive interactions.',
+          },
+          {
+            title: 'Performance Tracking',
+            text: 'Real-time reporting that measures engagement, leads, and campaign ROI.',
+          },
+        ].map((item) => (
+          <div key={item.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+        <div className="space-y-6">
+          <h3 className="text-3xl font-bold text-slate-900">Social media strategies for consistent growth</h3>
+          <p className="text-slate-600 leading-8">
+            From daily engagement to paid campaigns, our social media services are designed to increase brand awareness, nurture leads, and position your business as a trusted choice in Varanasi.
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 text-slate-700">
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Content planning and storytelling</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Paid ads with optimized audience targeting</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Community management and customer responses</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Analytics and campaign optimization</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="rounded-[32px] bg-gradient-to-r from-[#effcff] to-[#f8f9ff] border border-slate-200 p-10 shadow-sm">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-slate-900">Ready to amplify your social presence?</h3>
+            <p className="text-slate-600 leading-8">
+              We turn your social profiles into lead-generating channels with content, ads, and audience growth strategies that keep your business top of mind.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-white p-8 border border-slate-200 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-600 mb-4">Let’s connect</p>
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-white font-semibold hover:bg-blue-700">
+              Start Social Media Growth
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function PPCServicePageContent() {
+  return (
+    <div className="space-y-16 mt-10">
+      <section className="rounded-[32px] bg-gradient-to-r from-blue-900 via-blue-800 to-slate-950 p-12 text-white shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-cyan-300 mb-4">PPC Advertising</p>
+            <h2 className="text-5xl font-extrabold tracking-tight mb-6">Targeted PPC campaigns for fast results</h2>
+            <p className="text-lg leading-8 text-slate-200">
+              MarketingHubb creates PPC campaigns that reach buyers when they are ready to act, reducing wasted spend and improving conversions for Varanasi businesses.
+            </p>
+          </div>
+          <div className="rounded-[28px] border border-slate-700 bg-slate-950/80 p-8 shadow-2xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-300 mb-4">Our PPC edge</p>
+            <ul className="space-y-4 text-slate-200">
+              <li>Smart bidding and audience targeting</li>
+              <li>Ad copy and landing page optimization</li>
+              <li>Conversion tracking and ROI reporting</li>
+              <li>Google Ads, Facebook, and LinkedIn campaigns</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-8 lg:grid-cols-3">
+        {[
+          {
+            title: 'Campaign Setup',
+            text: 'We build campaigns with the right keywords, audiences, and conversion goals so every rupee works harder.',
+          },
+          {
+            title: 'Creative Optimization',
+            text: 'Data-driven ad copy, images, and CTAs that improve click-through rates and lower cost per lead.',
+          },
+          {
+            title: 'Performance Monitoring',
+            text: 'We continuously test bids, placements, and landing pages to maximize your campaign ROI.',
+          },
+        ].map((item) => (
+          <div key={item.title} className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+        <div className="space-y-6">
+          <h3 className="text-3xl font-bold text-slate-900">PPC campaigns built for measurable growth</h3>
+          <p className="text-slate-600 leading-8">
+            We focus on targeting, creative, and conversions to deliver PPC campaigns that drive traffic, leads, and sales without wasting budget.
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 text-slate-700">
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Keyword and audience research</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Ad testing and optimization</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Landing page and funnel improvements</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Analytics and conversion tracking</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="rounded-[32px] bg-gradient-to-r from-[#eff6ff] via-white to-[#eef4ff] border border-slate-200 p-10 shadow-sm">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-slate-900">Ready to start high-impact PPC?</h3>
+            <p className="text-slate-600 leading-8">
+              Our PPC experts set up, optimize, and scale campaigns that attract ready-to-buy customers for your business.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-white p-8 border border-slate-200 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-700 mb-4">Get started</p>
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-white font-semibold hover:bg-blue-700">
+              Start PPC Campaigns
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function WebsiteDesignPageContent() {
+  return (
+    <div className="space-y-16 mt-10">
+      <section className="rounded-[32px] border border-slate-200 bg-white p-12 shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-700 mb-4">Website Design</p>
+            <h2 className="text-5xl font-extrabold tracking-tight mb-6">Beautiful websites that convert visitors into customers</h2>
+            <p className="text-lg leading-8 text-slate-700">
+              We design responsive websites with strong branding, intuitive navigation, and fast performance to help your business stand out online.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-slate-50 p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-700 mb-4">Design focus</p>
+            <ul className="space-y-4 text-slate-700">
+              <li>Mobile-first UI/UX design</li>
+              <li>Conversion-focused layout and copy</li>
+              <li>Speed and accessibility optimization</li>
+              <li>CMS-ready pages for easy updates</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-8 lg:grid-cols-3">
+        {[
+          {
+            title: 'Brand-focused design',
+            text: 'We create visuals and experiences that reflect your brand values and build trust with visitors.',
+          },
+          {
+            title: 'Conversion-first pages',
+            text: 'Every page is crafted to guide users toward contact, quote requests, or sales.',
+          },
+          {
+            title: 'Fast and responsive',
+            text: 'Websites built to load quickly and perform well on desktop and mobile.',
+          },
+        ].map((item) => (
+          <div key={item.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+        <div className="space-y-6">
+          <h3 className="text-3xl font-bold text-slate-900">Web design with performance built in</h3>
+          <p className="text-slate-600 leading-8">
+            We help businesses convert more visitors with better page structure, clear messaging, and fast page delivery.
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 text-slate-700">
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">High-converting landing pages</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Modern brand visuals and UX</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Responsive mobile-first layouts</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">CMS and maintenance support</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="rounded-[32px] bg-gradient-to-r from-[#fff8f0] via-white to-[#f5f7ff] border border-slate-200 p-10 shadow-sm">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-slate-900">Need a website that works harder?</h3>
+            <p className="text-slate-600 leading-8">
+              Whether you need a new site or a redesign, our team creates digital experiences that build credibility and drive leads.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-white p-8 border border-slate-200 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.32em] text-slate-700 mb-4">Build your site</p>
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-white font-semibold hover:bg-blue-700">
+              Start Website Design
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function GraphicDesignPageContent() {
+  return (
+    <div className="space-y-16 mt-10">
+      <section className="rounded-[32px] border border-slate-200 bg-white p-12 shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-violet-600 mb-4">Graphic Design</p>
+            <h2 className="text-5xl font-extrabold tracking-tight mb-6">Creative design that brings your brand to life</h2>
+            <p className="text-lg leading-8 text-slate-700">
+              From branding to marketing assets, MarketingHubb delivers graphic design that helps your business make a memorable first impression.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-slate-50 p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-violet-600 mb-4">Design expertise</p>
+            <ul className="space-y-4 text-slate-700">
+              <li>Brand identity and logo creation</li>
+              <li>Social media and ad creatives</li>
+              <li>Brochures, flyers and print-ready design</li>
+              <li>Marketing collateral aligned with your goals</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-8 lg:grid-cols-3">
+        {[
+          {
+            title: 'Logo & branding',
+            text: 'Professional identity design that reflects your business personality and builds trust.',
+          },
+          {
+            title: 'Marketing creatives',
+            text: 'Eye-catching visuals for ads, social media, and print campaigns.',
+          },
+          {
+            title: 'Brand consistency',
+            text: 'Design systems that keep your visuals strong across every customer touchpoint.',
+          },
+        ].map((item) => (
+          <div key={item.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+        <div className="space-y-6">
+          <h3 className="text-3xl font-bold text-slate-900">Design that supports your marketing goals</h3>
+          <p className="text-slate-600 leading-8">
+            Great design does more than look good. It communicates value, builds trust, and motivates customers to take action.
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 text-slate-700">
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Brand and logo identity</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Social media post creatives</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Print and digital marketing assets</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Packaging and collateral design</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="rounded-[32px] bg-gradient-to-r from-[#fbf5ff] via-white to-[#eef4ff] border border-slate-200 p-10 shadow-sm">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-slate-900">Want visuals that make an impact?</h3>
+            <p className="text-slate-600 leading-8">
+              We create brand identities and marketing assets that help your business stand out in a crowded marketplace.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-white p-8 border border-slate-200 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.32em] text-violet-600 mb-4">Design your brand</p>
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-white font-semibold hover:bg-blue-700">
+              Start Graphic Design
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function EmailMarketingPageContent() {
+  return (
+    <div className="space-y-16 mt-10">
+      <section className="rounded-[32px] border border-slate-200 bg-white p-12 shadow-xl">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-cyan-700 mb-4">Email Marketing</p>
+            <h2 className="text-5xl font-extrabold tracking-tight mb-6">Email campaigns that nurture and convert</h2>
+            <p className="text-lg leading-8 text-slate-700">
+              Build lasting relationships with customers through targeted email campaigns, automation, and content that keeps your brand top of mind.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-slate-50 p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-700 mb-4">Email services</p>
+            <ul className="space-y-4 text-slate-700">
+              <li>Newsletter strategy and automation</li>
+              <li>Subscriber segmentation and personalization</li>
+              <li>Campaign analytics and optimization</li>
+              <li>High-converting email design</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-8 lg:grid-cols-3">
+        {[
+          {
+            title: 'List Growth',
+            text: 'We help you grow and segment your audience so your emails reach the right people with the right message.',
+          },
+          {
+            title: 'Campaign Automation',
+            text: 'Personalized drip campaigns and follow-ups that move subscribers through your sales journey.',
+          },
+          {
+            title: 'Open & Click Optimization',
+            text: 'Compelling subject lines, previews, and CTAs that improve open rates and engagement.',
+          },
+        ].map((item) => (
+          <div key={item.title} className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
+            <p className="text-slate-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+        <div className="space-y-6">
+          <h3 className="text-3xl font-bold text-slate-900">Email marketing that keeps customers engaged</h3>
+          <p className="text-slate-600 leading-8">
+            From newsletters to automated campaigns, we help you communicate with customers at the right time to increase retention and sales.
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 text-slate-700">
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Personalized email journeys</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Welcome and nurture sequences</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">High-converting email layouts</li>
+            <li className="rounded-3xl border border-slate-200 bg-slate-50 p-5">Performance tracking and reporting</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="rounded-[32px] bg-gradient-to-r from-[#f0fcff] via-white to-[#eef8ff] border border-slate-200 p-10 shadow-sm">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] items-center">
+          <div>
+            <h3 className="text-3xl font-bold text-slate-900">Ready to start email campaigns that convert?</h3>
+            <p className="text-slate-600 leading-8">
+              Our email marketing strategies help you stay connected with customers and generate repeat business.
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-white p-8 border border-slate-200 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.32em] text-cyan-700 mb-4">Let's launch</p>
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-4 text-white font-semibold hover:bg-blue-700">
+              Start Email Marketing
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function renderServicePageContent(service: { slug: string }) {
+  switch (service.slug) {
+    case 'seo':
+      return <SEOServicePageContent />;
+    case 'smm':
+      return <SocialMediaPageContent />;
+    case 'ppc':
+      return <PPCServicePageContent />;
+    case 'website':
+      return <WebsiteDesignPageContent />;
+    case 'graphic':
+      return <GraphicDesignPageContent />;
+    case 'email':
+      return <EmailMarketingPageContent />;
+    default:
+      return (
+        <div className="bg-white rounded-2xl shadow-lg p-10 mt-10">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <h2 className="text-2xl font-semibold text-slate-900 mb-4">Related Topics</h2>
+            <p className="text-slate-700">Learn more about our service and how we can help your business grow.</p>
+          </div>
+          <div className="mt-8">
+            <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-base font-semibold hover:from-blue-700 hover:to-cyan-600">
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      );
+  }
+}
+
 export default async function ServiceDetailsPage({ params }: { params: { service: string } }) {
   const service = await getService(params.service);
 
@@ -320,28 +756,7 @@ export default async function ServiceDetailsPage({ params }: { params: { service
           </div>
         </div>
 
-        {service.slug === 'seo' ? (
-          <SEOServicePageContent />
-        ) : (
-          <div className="bg-white rounded-2xl shadow-lg p-10 mt-10">
-            {service.relatedTopics?.length ? (
-              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                <h2 className="text-2xl font-semibold text-slate-900 mb-4">Related Topics</h2>
-                <ul className="space-y-3 text-slate-700 list-disc list-inside">
-                  {service.relatedTopics.map((topic) => (
-                    <li key={topic}>{topic}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            <div className="mt-8">
-              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-base font-semibold hover:from-blue-700 hover:to-cyan-600">
-                Contact Us for {service.title}
-              </Link>
-            </div>
-          </div>
-        )}
+        {renderServicePageContent(service)}
       </div>
     </div>
   );

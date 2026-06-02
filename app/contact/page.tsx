@@ -49,7 +49,7 @@ export default function Contact() {
                     <span className="font-semibold">Phone:</span> <a href="tel:+917307260253" className="text-blue-600 hover:underline">+91 73072 60253</a>
                   </div>
                   <div>
-                    <span className="font-semibold">Email:</span> <a href="mailto:contact@marketinghubb.in" className="text-blue-600 hover:underline">contact@marketinghubb.in</a>
+                    <span className="font-semibold">Email:</span> <a href="mailto:saurabhcgoubey200@gmail.com" className="text-blue-600 hover:underline">saurabhcgoubey200@gmail.com</a>
                   </div>
                   <div>
                     <span className="font-semibold">Office Hours:</span> Mon - Sat, 10:00 AM – 7:00 PM
