@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import ServiceSection from '../components/ServiceSection';
 import CoreValuesSection from '../components/CoreValuesSection';
 import WhyTrustSection from '../components/WhyTrustSection';
 import WhyChooseSection from '../components/WhyChooseSection';
@@ -40,7 +39,6 @@ export default function Service() {
           <p className="text-xl md:text-2xl">Comprehensive digital marketing solutions</p>
         </div>
       </div>
-      <ServiceSection />
       <CoreValuesSection />
       <IndustriesSection />
       <WhyTrustSection />
