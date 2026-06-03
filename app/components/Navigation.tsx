@@ -48,6 +48,9 @@ export default function Navigation() {
             <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
               About
             </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">
+              Blog
+            </Link>
             <Link href="/service" className="text-gray-700 hover:text-blue-600 transition-colors">
               Services
             </Link>
@@ -73,6 +76,13 @@ export default function Navigation() {
                 onClick={() => setMenuOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                href="/blog"
+                className="block rounded-xl px-4 py-3 text-gray-700 hover:bg-slate-100"
+                onClick={() => setMenuOpen(false)}
+              >
+                Blog
               </Link>
               <Link
                 href="/service"
