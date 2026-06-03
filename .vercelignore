@@ -1,0 +1,10 @@
+### Vercel ignore file — keep deployments small
+lighthouse-report*.json
+lighthouse-report.json
+Visual Studio Code - Copy.lnk
+*.lnk
+.env.local
+.env.*.local
+*.log
+.vscode/
+.DS_Store
