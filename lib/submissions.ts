@@ -70,3 +70,24 @@ export async function writeSubmissions(submissions: Submission[]) {
     throw error;
   }
 }
+
+export async function addSubmission(data: Omit<Submission, 'id' | 'createdAt'>): Promise<Submission> {
+  try {
+    const submissions = await readSubmissions();
+    
+    const newSubmission: Submission = {
+      id: Date.now().toString(),
+      ...data,
+      createdAt: new Date().toISOString(),
+    };
+    
+    submissions.push(newSubmission);
+    await writeSubmissions(submissions);
+    
+    console.log('✅ Submission added:', newSubmission.id);
+    return newSubmission;
+  } catch (error) {
+    console.error('❌ Error adding submission:', error);
+    throw error;
+  }
+}

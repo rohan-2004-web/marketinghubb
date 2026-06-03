@@ -1,5 +1,7 @@
 ﻿'use client';
 
+import Link from 'next/link';
+
 const services = [
   {
     slug: 'seo',
@@ -56,8 +58,8 @@ export default function ServiceSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div key={service.slug} className="group block">
-              <div className="relative overflow-hidden rounded-[32px] border border-white/80 bg-white/95 p-8 shadow-[0_24px_60px_rgba(15,23,42,0.08)] hover:shadow-[0_35px_80px_rgba(15,23,42,0.14)] transition-all duration-300">
+            <Link key={service.slug} href={`/service/${service.slug}`} className="group block hover:no-underline">
+              <div className="relative overflow-hidden rounded-[32px] border border-white/80 bg-white/95 p-8 shadow-[0_24px_60px_rgba(15,23,42,0.08)] hover:shadow-[0_35px_80px_rgba(15,23,42,0.14)] transition-all duration-300 h-full cursor-pointer">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#35d6b0]/10 to-[#0c62a9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative z-10">
                   <div className="mb-5 inline-flex items-center justify-center h-16 w-16 rounded-3xl bg-[#eef9ff] text-[#35d6b0] shadow-lg shadow-[#35d6b0]/10 transition-all duration-300 text-3xl">
@@ -65,12 +67,12 @@ export default function ServiceSection() {
                   </div>
                   <h3 className="text-2xl font-bold text-[#0c345e] mb-3 group-hover:text-[#0c62a9] transition-colors duration-300">{service.title}</h3>
                   <p className="text-[#50647f] mb-6 leading-relaxed">{service.description}</p>
-                  <span className="inline-flex items-center gap-2 text-[#0c62a9] font-semibold transition-colors duration-300">
+                  <span className="inline-flex items-center gap-2 text-[#0c62a9] font-semibold transition-colors duration-300 group-hover:gap-3">
                     Explore <span className="text-xl">→</span>
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
