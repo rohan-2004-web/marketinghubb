@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 import FloatingIcons from "./components/FloatingIcons";
 import Footer from "./components/Footer";
+import FloatingContactForm from "./components/FloatingContactForm";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -128,6 +129,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <FloatingIcons />
+        <FloatingContactForm isFloating={true} />
         <Footer />
       </body>
     </html>

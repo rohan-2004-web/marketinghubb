@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import WhyChooseSection from '../components/WhyChooseSection';
 import WhyTrustSection from '../components/WhyTrustSection';
-import ContactForm from './ContactForm';
+import FloatingContactForm from '../components/FloatingContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact MarketingHubb | Digital Marketing Agency in Varanasi',
@@ -81,7 +81,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <ContactForm />
+      <FloatingContactForm isFloating={false} />
       <WhyChooseSection />
       <WhyTrustSection />
     </div>
