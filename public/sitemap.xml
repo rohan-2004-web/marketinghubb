@@ -1,53 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://www.marketinghubb.in/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.00</priority>
+    <priority>1.0</priority>
   </url>
+
+  <!-- Main Pages -->
   <url>
     <loc>https://www.marketinghubb.in/about</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.marketinghubb.in/contact</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.marketinghubb.in/service</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.marketinghubb.in/service/seo-optimization</loc>
+    <loc>https://www.marketinghubb.in/blog</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Service Pages -->
+  <url>
+    <loc>https://www.marketinghubb.in/service/seo</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.marketinghubb.in/service/social-media-marketing</loc>
+    <loc>https://www.marketinghubb.in/service/smm</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.marketinghubb.in/service/ppc-advertising</loc>
+    <loc>https://www.marketinghubb.in/service/ppc</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.marketinghubb.in/service/content-marketing</loc>
+    <loc>https://www.marketinghubb.in/service/website</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.marketinghubb.in/service/web-design</loc>
+    <loc>https://www.marketinghubb.in/service/graphic</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.marketinghubb.in/service/email-marketing</loc>
+    <loc>https://www.marketinghubb.in/service/email</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.marketinghubb.in/blog/how-social-media-marketing-helps-local-brands-in-varanasi</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.marketinghubb.in/blog/seo-strategies-for-small-businesses-in-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.marketinghubb.in/blog/why-your-website-needs-a-mobile-first-design</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.marketinghubb.in/blog/simple-content-ideas-for-local-business-blogs</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.marketinghubb.in/blog/how-ppc-and-seo-work-together-for-faster-leads</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
 </urlset>

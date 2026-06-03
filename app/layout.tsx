@@ -72,6 +72,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0c62a9" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
         <script
           type="application/ld+json"
@@ -92,18 +101,34 @@ export default function RootLayout({
                 "addressCountry": "IN"
               },
               "areaServed": "Varanasi",
+              "priceRange": "$$",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
+                }
+              ],
               "sameAs": [
                 "https://www.facebook.com/",
                 "https://www.instagram.com/",
                 "https://www.linkedin.com/"
-              ]
-            })
+              ],
+              "image": "https://www.marketinghubb.in/image/logo.jpg",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.marketinghubb.in/image/logo.jpg",
+                "width": 250,
+                "height": 60
+              }
+            }),
           }}
         />
         <Navigation />
         {children}
-        <Footer />
         <FloatingIcons />
+        <Footer />
       </body>
     </html>
   );

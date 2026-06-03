@@ -301,8 +301,81 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.marketinghubb.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.marketinghubb.in/service"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": service.longTitle,
+        "item": `https://www.marketinghubb.in/service/${slug}`
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `${service.longTitle} - MarketingHubb`,
+    "description": service.fullDescription,
+    "serviceType": service.longTitle,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "MarketingHubb",
+      "url": "https://www.marketinghubb.in",
+      "telephone": "+917307260253",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mahmoorganj",
+        "addressLocality": "Varanasi",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "221010",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Varanasi"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `${service.longTitle} Services`,
+      "itemListElement": service.services.map((svc: any, index: number) => ({
+        "@type": "Offer",
+        "position": index + 1,
+        "name": svc.name,
+        "description": svc.description
+      }))
+    }
+  };
+
   return (
     <div className="min-h-screen pt-16 bg-slate-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceSchema),
+        }}
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
